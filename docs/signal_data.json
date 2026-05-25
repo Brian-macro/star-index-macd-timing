@@ -1,0 +1,336 @@
+{
+  "update_time": "2026-05-25 11:13:48",
+  "current": {
+    "date": "2026-05-22",
+    "close": 2148.18,
+    "dif": 42.4465,
+    "dea": 41.2919,
+    "macd_bar": 2.3093,
+    "position": "long",
+    "position_cn": "持仓中"
+  },
+  "performance": {
+    "total_return": 301.61,
+    "annual_return": 25.45,
+    "max_drawdown": -27.32,
+    "sharpe": 1.04,
+    "total_trades": 42,
+    "win_rate": 47.6,
+    "profit_factor": 3.16
+  },
+  "benchmark": {
+    "total_return": 107.19,
+    "annual_return": 12.62,
+    "max_drawdown": -57.93
+  },
+  "recent_signals": [
+    {
+      "date": "2024-09-09",
+      "type": "sell",
+      "close": 777.36,
+      "dif": -6.2043,
+      "dea": -5.9015,
+      "macd_bar": -0.6057
+    },
+    {
+      "date": "2024-09-11",
+      "type": "buy",
+      "close": 788.96,
+      "dif": -5.9061,
+      "dea": -5.9449,
+      "macd_bar": 0.0776
+    },
+    {
+      "date": "2024-09-13",
+      "type": "sell",
+      "close": 773.43,
+      "dif": -6.1319,
+      "dea": -5.9543,
+      "macd_bar": -0.3553
+    },
+    {
+      "date": "2024-09-24",
+      "type": "buy",
+      "close": 791.71,
+      "dif": -5.6045,
+      "dea": -6.22,
+      "macd_bar": 1.231
+    },
+    {
+      "date": "2024-10-29",
+      "type": "sell",
+      "close": 1102.67,
+      "dif": 31.5054,
+      "dea": 31.5146,
+      "macd_bar": -0.0183
+    },
+    {
+      "date": "2024-11-11",
+      "type": "buy",
+      "close": 1243.87,
+      "dif": 27.803,
+      "dea": 26.2976,
+      "macd_bar": 3.0108
+    },
+    {
+      "date": "2024-11-14",
+      "type": "sell",
+      "close": 1181.56,
+      "dif": 26.8265,
+      "dea": 26.9414,
+      "macd_bar": -0.2298
+    },
+    {
+      "date": "2025-01-17",
+      "type": "buy",
+      "close": 1103.3,
+      "dif": -6.9471,
+      "dea": -7.8761,
+      "macd_bar": 1.8582
+    },
+    {
+      "date": "2025-03-11",
+      "type": "sell",
+      "close": 1276.87,
+      "dif": 14.9226,
+      "dea": 15.1553,
+      "macd_bar": -0.4654
+    },
+    {
+      "date": "2025-04-17",
+      "type": "buy",
+      "close": 1159.93,
+      "dif": -9.8014,
+      "dea": -10.8391,
+      "macd_bar": 2.0754
+    },
+    {
+      "date": "2025-05-22",
+      "type": "sell",
+      "close": 1167.89,
+      "dif": -0.0958,
+      "dea": 0.318,
+      "macd_bar": -0.8275
+    },
+    {
+      "date": "2025-06-04",
+      "type": "buy",
+      "close": 1178.47,
+      "dif": -0.9259,
+      "dea": -1.2017,
+      "macd_bar": 0.5516
+    },
+    {
+      "date": "2025-06-18",
+      "type": "sell",
+      "close": 1179.56,
+      "dif": 1.0623,
+      "dea": 1.2226,
+      "macd_bar": -0.3206
+    },
+    {
+      "date": "2025-06-25",
+      "type": "buy",
+      "close": 1217.09,
+      "dif": 2.3032,
+      "dea": 0.8705,
+      "macd_bar": 2.8654
+    },
+    {
+      "date": "2025-09-04",
+      "type": "sell",
+      "close": 1486.04,
+      "dif": 27.7646,
+      "dea": 30.9166,
+      "macd_bar": -6.3039
+    },
+    {
+      "date": "2025-09-24",
+      "type": "buy",
+      "close": 1695.9,
+      "dif": 23.5359,
+      "dea": 22.671,
+      "macd_bar": 1.7299
+    },
+    {
+      "date": "2025-10-10",
+      "type": "sell",
+      "close": 1665.31,
+      "dif": 22.8921,
+      "dea": 23.6481,
+      "macd_bar": -1.512
+    },
+    {
+      "date": "2025-12-02",
+      "type": "buy",
+      "close": 1567.48,
+      "dif": -8.2801,
+      "dea": -8.6085,
+      "macd_bar": 0.6569
+    },
+    {
+      "date": "2026-01-29",
+      "type": "sell",
+      "close": 1831.1,
+      "dif": 25.4543,
+      "dea": 28.3356,
+      "macd_bar": -5.7627
+    },
+    {
+      "date": "2026-04-07",
+      "type": "buy",
+      "close": 1645.51,
+      "dif": -15.7549,
+      "dea": -16.013,
+      "macd_bar": 0.5162
+    }
+  ],
+  "recent_trades": [
+    {
+      "entry_date": "2024-09-04",
+      "exit_date": "2024-09-10",
+      "entry_price": 795.71,
+      "exit_price": 777.58,
+      "return": -2.28,
+      "bh_return": -1.99,
+      "excess": -0.29,
+      "holding_days": 6
+    },
+    {
+      "entry_date": "2024-09-12",
+      "exit_date": "2024-09-18",
+      "entry_price": 791.41,
+      "exit_price": 772.61,
+      "return": -2.38,
+      "bh_return": -2.27,
+      "excess": -0.1,
+      "holding_days": 6
+    },
+    {
+      "entry_date": "2024-09-25",
+      "exit_date": "2024-10-30",
+      "entry_price": 800.51,
+      "exit_price": 1093.54,
+      "return": 36.61,
+      "bh_return": 37.18,
+      "excess": -0.58,
+      "holding_days": 35
+    },
+    {
+      "entry_date": "2024-11-12",
+      "exit_date": "2024-11-15",
+      "entry_price": 1247.96,
+      "exit_price": 1176.79,
+      "return": -5.7,
+      "bh_return": -6.59,
+      "excess": 0.88,
+      "holding_days": 3
+    },
+    {
+      "entry_date": "2025-01-20",
+      "exit_date": "2025-03-12",
+      "entry_price": 1110.14,
+      "exit_price": 1283.65,
+      "return": 15.63,
+      "bh_return": 14.68,
+      "excess": 0.95,
+      "holding_days": 51
+    },
+    {
+      "entry_date": "2025-04-18",
+      "exit_date": "2025-05-23",
+      "entry_price": 1156.99,
+      "exit_price": 1165.84,
+      "return": 0.76,
+      "bh_return": 0.24,
+      "excess": 0.53,
+      "holding_days": 35
+    },
+    {
+      "entry_date": "2025-06-05",
+      "exit_date": "2025-06-19",
+      "entry_price": 1181.1,
+      "exit_price": 1177.74,
+      "return": -0.28,
+      "bh_return": -2.02,
+      "excess": 1.74,
+      "holding_days": 14
+    },
+    {
+      "entry_date": "2025-06-26",
+      "exit_date": "2025-09-05",
+      "entry_price": 1216.86,
+      "exit_price": 1490.32,
+      "return": 22.47,
+      "bh_return": 27.91,
+      "excess": -5.44,
+      "holding_days": 71
+    },
+    {
+      "entry_date": "2025-09-25",
+      "exit_date": "2025-10-13",
+      "entry_price": 1693.28,
+      "exit_price": 1603.05,
+      "return": -5.33,
+      "bh_return": -1.52,
+      "excess": -3.8,
+      "holding_days": 18
+    },
+    {
+      "entry_date": "2025-12-03",
+      "exit_date": "2026-01-30",
+      "entry_price": 1568.16,
+      "exit_price": 1822.06,
+      "return": 16.19,
+      "bh_return": 18.04,
+      "excess": -1.84,
+      "holding_days": 58
+    }
+  ],
+  "yearly": [
+    {
+      "year": 2020,
+      "strategy": 38.3,
+      "benchmark": 41.9,
+      "excess": -3.6
+    },
+    {
+      "year": 2021,
+      "strategy": 14.5,
+      "benchmark": 8.8,
+      "excess": 5.7
+    },
+    {
+      "year": 2022,
+      "strategy": 16.2,
+      "benchmark": -25.4,
+      "excess": 41.6
+    },
+    {
+      "year": 2023,
+      "strategy": -8.1,
+      "benchmark": -10.0,
+      "excess": 1.9
+    },
+    {
+      "year": 2024,
+      "strategy": 16.6,
+      "benchmark": 2.9,
+      "excess": 13.7
+    },
+    {
+      "year": 2025,
+      "strategy": 38.7,
+      "benchmark": 51.0,
+      "excess": -12.4
+    },
+    {
+      "year": 2026,
+      "strategy": 35.4,
+      "benchmark": 26.7,
+      "excess": 8.8
+    }
+  ],
+  "all_signals_count": 85,
+  "all_trades_count": 42
+}

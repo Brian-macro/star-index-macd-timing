@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>科创综指 MACD 择时信号</title>
+<style>
+  :root {
+    --bg: #0a0e17;
+    --card: #111827;
+    --border: #1e293b;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --green: #22c55e;
+    --red: #ef4444;
+    --blue: #3b82f6;
+    --gold: #f59e0b;
+    --green-bg: rgba(34,197,94,0.1);
+    --red-bg: rgba(239,68,68,0.1);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  .container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+
+  header {
+    text-align: center;
+    padding: 32px 0 24px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 24px;
+  }
+  header h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
+  header h1 span { color: var(--gold); }
+  header .subtitle { color: var(--muted); font-size: 14px; margin-top: 4px; }
+
+  /* 当前信号卡片 */
+  .signal-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .signal-main {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .signal-badge {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 8px 20px;
+    border-radius: 8px;
+    letter-spacing: 1px;
+  }
+  .signal-badge.long {
+    background: var(--green-bg);
+    color: var(--green);
+    border: 1px solid var(--green);
+  }
+  .signal-badge.cash {
+    background: var(--red-bg);
+    color: var(--red);
+    border: 1px solid var(--red);
+  }
+  .signal-price {
+    font-size: 32px;
+    font-weight: 700;
+  }
+  .signal-meta {
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  /* 指标面板 */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .metric-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .metric-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  .metric-value { font-size: 24px; font-weight: 700; margin-top: 4px; }
+  .metric-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .positive { color: var(--green); }
+  .negative { color: var(--red); }
+
+  /* 表格 */
+  .section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 28px 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  th {
+    text-align: left;
+    padding: 8px 10px;
+    color: var(--muted);
+    font-weight: 500;
+    border-bottom: 1px solid var(--border);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  tr:hover { background: rgba(255,255,255,0.02); }
+
+  /* 年度柱状图 */
+  .yearly-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    height: 160px;
+    padding: 16px 0;
+    margin-bottom: 24px;
+  }
+  .year-bar-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: flex-end;
+    position: relative;
+  }
+  .year-bar {
+    width: 100%;
+    max-width: 40px;
+    min-height: 2px;
+    border-radius: 3px 3px 0 0;
+    transition: height 0.3s;
+    position: relative;
+  }
+  .year-bar.strat { background: var(--blue); }
+  .year-bar.bench { background: var(--muted); opacity: 0.4; }
+  .year-bar.neg { background: var(--red); }
+  .year-label { font-size: 11px; color: var(--muted); margin-top: 6px; }
+  .year-val { font-size: 10px; font-weight: 600; position: absolute; top: -16px; left: 50%; transform: translateX(-50%); white-space: nowrap; }
+
+  footer {
+    text-align: center;
+    padding: 24px 0;
+    color: var(--muted);
+    font-size: 12px;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+  .disclaimer {
+    background: rgba(245,158,11,0.08);
+    border: 1px solid rgba(245,158,11,0.2);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 12px;
+    color: var(--gold);
+    margin: 20px 0;
+    line-height: 1.6;
+  }
+
+  /* 加载动画 */
+  .loading { text-align: center; padding: 60px 0; color: var(--muted); }
+  .loading .spinner {
+    display: inline-block;
+    width: 32px; height: 32px;
+    border: 3px solid var(--border);
+    border-top-color: var(--blue);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  @media (max-width: 640px) {
+    .signal-card { flex-direction: column; align-items: flex-start; }
+    .signal-price { font-size: 24px; }
+    .metrics-grid { grid-template-columns: 1fr 1fr; }
+    table { font-size: 11px; }
+    th, td { padding: 6px 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>科创综指 <span>MACD</span> 择时信号</h1>
+    <div class="subtitle">MACD(12/18/13) | 000680.SH | 自动更新</div>
+  </header>
+
+  <div id="content">
+    <div class="loading">
+      <div class="spinner"></div>
+      <p style="margin-top:12px;">加载信号数据...</p>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    本信号仅供研究参考，不构成投资建议。MACD策略基于历史数据回测，过往表现不代表未来收益。投资有风险，入市需谨慎。
+  </div>
+</div>
+
+<script>
+async function loadData() {
+  try {
+    const resp = await fetch('signal_data.json?t=' + Date.now());
+    const data = await resp.json();
+    render(data);
+  } catch(e) {
+    document.getElementById('content').innerHTML =
+      '<div class="loading"><p style="color:var(--red)">数据加载失败，请稍后刷新重试</p></div>';
+  }
+}
+
+function fmt(v, suffix='%') {
+  if (v == null) return '--';
+  const n = parseFloat(v);
+  if (isNaN(n)) return '--';
+  return (n > 0 ? '+' : '') + n.toFixed(1) + suffix;
+}
+
+function cls(v) {
+  return parseFloat(v) >= 0 ? 'positive' : 'negative';
+}
+
+function render(d) {
+  const c = d.current;
+  const p = d.performance;
+  const b = d.benchmark;
+
+  const isLong = c.position === 'long';
+  const signalBadge = `<div class="signal-badge ${c.position}">${c.position_cn}</div>`;
+  const signalColor = isLong ? 'var(--green)' : 'var(--red)';
+
+  let html = '';
+
+  // 当前信号
+  html += `
+  <div class="signal-card" style="border-color:${signalColor}30">
+    <div class="signal-main">
+      ${signalBadge}
+      <div>
+        <div class="signal-price" style="color:${signalColor}">${c.close.toFixed(2)}</div>
+        <div class="signal-meta">科创综指 000680.SH | ${c.date}</div>
+      </div>
+    </div>
+    <div style="text-align:right">
+      <div class="signal-meta">DIF: ${c.dif.toFixed(2)} | DEA: ${c.dea.toFixed(2)}</div>
+      <div class="signal-meta">MACD柱: ${c.macd_bar.toFixed(2)}</div>
+      <div class="signal-meta" style="margin-top:4px">更新: ${d.update_time}</div>
+    </div>
+  </div>`;
+
+  // 策略指标
+  html += `
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-label">年化收益</div>
+      <div class="metric-value ${cls(p.annual_return)}">${fmt(p.annual_return)}</div>
+      <div class="metric-sub">基准 ${fmt(b.annual_return)}</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">最大回撤</div>
+      <div class="metric-value negative">${fmt(p.max_drawdown)}</div>
+      <div class="metric-sub">基准 ${fmt(b.max_drawdown)}</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">夏普比率</div>
+      <div class="metric-value">${p.sharpe.toFixed(2)}</div>
+      <div class="metric-sub">${p.total_trades}笔交易</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">胜率</div>
+      <div class="metric-value">${p.win_rate.toFixed(1)}%</div>
+      <div class="metric-sub">盈亏比 ${p.profit_factor.toFixed(2)}</div>
+    </div>
+  </div>`;
+
+  // 年度收益图
+  if (d.yearly && d.yearly.length > 0) {
+    const maxAbs = Math.max(...d.yearly.map(y => Math.max(Math.abs(y.strategy), Math.abs(y.benchmark))));
+    html += `<div class="section-title">年度收益对比</div>`;
+    html += `<div class="yearly-chart">`;
+    for (const y of d.yearly) {
+      const sH = Math.abs(y.strategy) / maxAbs * 120;
+      const bH = Math.abs(y.benchmark) / maxAbs * 120;
+      const sColor = y.strategy >= 0 ? 'var(--green)' : 'var(--red)';
+      const bColor = y.benchmark >= 0 ? 'rgba(148,163,184,0.3)' : 'rgba(239,68,68,0.2)';
+      html += `
+      <div class="year-bar-group">
+        <div style="display:flex;gap:3px;align-items:flex-end;">
+          <div class="year-bar strat" style="height:${sH}px;background:${sColor}">
+            <span class="year-val ${cls(y.strategy)}">${y.strategy > 0 ? '+' : ''}${y.strategy.toFixed(0)}%</span>
+          </div>
+          <div class="year-bar bench" style="height:${bH}px;background:${bColor}"></div>
+        </div>
+        <div class="year-label">${y.year}</div>
+      </div>`;
+    }
+    html += `</div>`;
+    html += `<div style="display:flex;gap:16px;justify-content:center;margin-bottom:24px;font-size:12px;color:var(--muted)">
+      <span><span style="display:inline-block;width:12px;height:12px;background:var(--green);border-radius:2px;vertical-align:middle"></span> 策略</span>
+      <span><span style="display:inline-block;width:12px;height:12px;background:rgba(148,163,184,0.3);border-radius:2px;vertical-align:middle"></span> 基准</span>
+    </div>`;
+  }
+
+  // 最近交易
+  if (d.recent_trades && d.recent_trades.length > 0) {
+    html += `<div class="section-title">最近交易明细</div>`;
+    html += `<div style="overflow-x:auto"><table>
+      <thead><tr>
+        <th>买入</th><th>卖出</th><th>买入价</th><th>卖出价</th>
+        <th>策略收益</th><th>基准收益</th><th>超额</th><th>持仓</th>
+      </tr></thead><tbody>`;
+    for (const t of d.recent_trades.slice().reverse()) {
+      html += `<tr>
+        <td>${t.entry_date}</td><td>${t.exit_date}</td>
+        <td>${t.entry_price.toFixed(0)}</td><td>${t.exit_price.toFixed(0)}</td>
+        <td class="${cls(t.return)}">${fmt(t.return)}</td>
+        <td class="${cls(t.bh_return)}">${fmt(t.bh_return)}</td>
+        <td class="${cls(t.excess)}">${fmt(t.excess)}</td>
+        <td>${t.holding_days}天</td>
+      </tr>`;
+    }
+    html += `</tbody></table></div>`;
+  }
+
+  // 最近信号
+  if (d.recent_signals && d.recent_signals.length > 0) {
+    html += `<div class="section-title">最近20个信号</div>`;
+    html += `<div style="overflow-x:auto"><table>
+      <thead><tr><th>日期</th><th>方向</th><th>收盘价</th><th>DIF</th><th>DEA</th><th>MACD柱</th></tr></thead>
+      <tbody>`;
+    for (const s of d.recent_signals.slice().reverse()) {
+      const dir = s.type === 'buy' ? '<span class="positive">金叉买入</span>' : '<span class="negative">死叉卖出</span>';
+      html += `<tr>
+        <td>${s.date}</td><td>${dir}</td><td>${s.close.toFixed(2)}</td>
+        <td>${s.dif.toFixed(2)}</td><td>${s.dea.toFixed(2)}</td><td>${s.macd_bar.toFixed(2)}</td>
+      </tr>`;
+    }
+    html += `</tbody></table></div>`;
+  }
+
+  // footer
+  html += `
+  <footer>
+    策略: MACD(12/18/13) | 数据源: 新浪财经 | 回测区间: 2020-01 ~ 今<br>
+    交易成本: 0.1%佣金 + 0.1%滑点 | 由 GitHub Actions 自动更新
+  </footer>`;
+
+  document.getElementById('content').innerHTML = html;
+}
+
+loadData();
+</script>
+</body>
+</html>

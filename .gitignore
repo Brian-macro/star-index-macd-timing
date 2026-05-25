@@ -1,0 +1,38 @@
+# 数据文件（不提交，由定时任务自动采集）
+data/*.csv
+data/*.txt
+
+# 结果文件（不提交，由定时任务自动生成）
+results/*.pkl
+results/*.txt
+
+# Python缓存
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# 原始文档
+*.docx
+doc_content.txt
+
+# 测试/临时脚本
+test_*.py
+explore_*.py
+extract_doc.py
+check_data.py
+download_15min.py
+download_15min_full.py
+download_15min_v2.py
+try_etf_15min.py
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 信号输出（docs文件夹下的由Actions生成，保留index.html）
+# docs/signal_data.json 和 docs/index.html 会由CI生成并提交
