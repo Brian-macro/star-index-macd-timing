@@ -1,10 +1,11 @@
-name: 更新MACD信号
+name: Update MACD Signal
 
 on:
-  # 每个交易日 北京时间 15:30 运行 (UTC 07:30)
+  # 盘中每15分钟运行 (北京时间 9:30-15:00 = UTC 1:30-7:00)
   schedule:
+    - cron: '0,15,30,45 1-7 * * 1-5'
     - cron: '30 7 * * 1-5'
-  # 支持手动触发
+  # 手动触发
   workflow_dispatch:
 
 permissions:
@@ -34,5 +35,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add docs/signal_data.json
-          git diff --cached --quiet || git commit -m "更新信号: $(date -u +%Y-%m-%d)"
+          git diff --cached --quiet || git commit -m "signal: $(date -u +%Y-%m-%d\ %H:%M)"
           git push

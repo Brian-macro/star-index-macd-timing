@@ -126,8 +126,9 @@ def download_15min_data():
         df = pd.DataFrame(rows)
         df['datetime'] = pd.to_datetime(df['datetime'])
         df = df.sort_values('datetime').reset_index(drop=True)
+        df['date'] = df['datetime'].dt.date
         df.to_csv(os.path.join(DATA_DIR, 'kcz_15min.csv'), index=False, encoding='utf-8-sig')
-        n_days = df['datetime'].dt.date.nunique()
+        n_days = df['date'].nunique()
         print(f'  15分钟数据: {len(df)} bars, {n_days}天')
         return df
     except Exception as e:
@@ -291,17 +292,114 @@ def compute_daily_signals(df_daily):
     print(f'  策略年化: {annual_ret:.1f}%, 夏普: {sharpe:.2f}, 回撤: {max_dd:.1f}%')
     print(f'  当前: {current_state["position_cn"]}, 最新价 {current_state["close"]}')
 
+    # 月度净值曲线
+    df_daily_temp['s_nav'] = nav / 1e6
+    df_daily_temp['b_nav'] = df_daily_temp['close'].values / float(df_daily_temp['close'].iloc[0])
+    df_daily_temp['ym'] = df_daily_temp['date'].dt.to_period('M')
+    monthly = df_daily_temp.groupby('ym').last().reset_index()
+    nav_monthly = []
+    for _, row in monthly.iterrows():
+        nav_monthly.append({
+            'date': str(row['date'].date()),
+            'strategy': round(float(row['s_nav']), 4),
+            'benchmark': round(float(row['b_nav']), 4),
+        })
+    print(f'  月度净值: {len(nav_monthly)} 点')
+
     return {
-        'update_time': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
         'current': current_state,
         'performance': performance,
         'benchmark': benchmark,
-        'recent_signals': signals[-20:],
-        'recent_trades': trades[-10:],
+        'all_signals': signals,
+        'all_trades': trades,
+        'nav_monthly': nav_monthly,
         'yearly': yearly,
-        'all_signals_count': len(signals),
-        'all_trades_count': len(trades),
     }
+
+
+# ========================================================================
+# 2b. 实时盘中信号监测
+# ========================================================================
+def compute_realtime_signal(df_daily, df_15min):
+    """
+    用最新15分钟数据计算"盘中实时MACD"
+    核心思路: 用前一天的EMA值递推, 结合当日最新的15分钟价格
+    不用等收盘, 盘中就能发现DIF穿越DEA
+    """
+    if df_15min is None or len(df_15min) < 100:
+        return None
+
+    print('  [盘中监测] 计算实时MACD...')
+
+    # 日线MACD历史值 (到昨天为止)
+    ema12 = df_daily['close'].ewm(span=12, adjust=False).mean()
+    ema18 = df_daily['close'].ewm(span=18, adjust=False).mean()
+    dif_daily = ema12 - ema18
+    dea_daily = dif_daily.ewm(span=13, adjust=False).mean()
+
+    # 前一交易日的EMA和DIF/DEA值
+    last_ema12 = float(ema12.iloc[-2]) if len(ema12) >= 2 else float(ema12.iloc[-1])
+    last_ema18 = float(ema18.iloc[-2]) if len(ema18) >= 2 else float(ema18.iloc[-1])
+    last_dif = float(dif_daily.iloc[-2]) if len(dif_daily) >= 2 else float(dif_daily.iloc[-1])
+    last_dea = float(dea_daily.iloc[-2]) if len(dea_daily) >= 2 else float(dea_daily.iloc[-1])
+
+    alpha12 = 2 / (12 + 1)
+    alpha18 = 2 / (18 + 1)
+    alpha_dea = 2 / (13 + 1)
+
+    # 取当日最新的15分钟数据
+    today = df_15min['date'].iloc[-1]
+    today_bars = df_15min[df_15min['date'] == today].copy()
+
+    if len(today_bars) == 0:
+        return None
+
+    latest_bar = today_bars.iloc[-1]
+    latest_price = float(latest_bar['close'])
+    latest_time = str(latest_bar['datetime'])
+
+    # 递推计算实时EMA
+    rt_ema12 = alpha12 * latest_price + (1 - alpha12) * last_ema12
+    rt_ema18 = alpha18 * latest_price + (1 - alpha18) * last_ema18
+    rt_dif = rt_ema12 - rt_ema18
+    rt_dea = alpha_dea * rt_dif + (1 - alpha_dea) * last_dea
+    rt_macd_bar = 2 * (rt_dif - rt_dea)
+
+    # 判断盘中穿越
+    cross_up = rt_dif > rt_dea and last_dif <= last_dea   # 盘中金叉
+    cross_down = rt_dif < rt_dea and last_dif >= last_dea  # 盘中死叉
+
+    # 穿越确认: 即使没有精确穿越, 也报告DIF和DEA的距离
+    distance = rt_dif - rt_dea
+    distance_pct = distance / abs(last_dea) * 100 if last_dea != 0 else 0
+
+    result = {
+        'time': latest_time,
+        'price': round(latest_price, 2),
+        'rt_dif': round(float(rt_dif), 4),
+        'rt_dea': round(float(rt_dea), 4),
+        'rt_macd_bar': round(float(rt_macd_bar), 4),
+        'prev_dif': round(float(last_dif), 4),
+        'prev_dea': round(float(last_dea), 4),
+        'distance': round(float(distance), 4),
+        'distance_pct': round(float(distance_pct), 2),
+        'cross_up': bool(cross_up),
+        'cross_down': bool(cross_down),
+        'approaching_cross': bool(abs(distance_pct) < 10),  # DIF接近DEA
+        'alert': '',
+    }
+
+    if cross_up:
+        result['alert'] = f'盘中金叉! DIF({rt_dif:.2f}) > DEA({rt_dea:.2f}), 建议立即买入'
+    elif cross_down:
+        result['alert'] = f'盘中死叉! DIF({rt_dif:.2f}) < DEA({rt_dea:.2f}), 建议立即卖出'
+    elif rt_dif > rt_dea:
+        result['alert'] = f'DIF在DEA上方, 距离{distance:.2f}, 持仓中'
+    else:
+        result['alert'] = f'DIF在DEA下方, 距离{distance:.2f}, 空仓中'
+
+    print(f'  [盘中监测] {result["alert"]}')
+    return result
 
 
 # ========================================================================
@@ -325,9 +423,15 @@ def main():
     print(f'时间: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\n')
 
     df_daily = download_daily_data()
-    df_15min = download_15min_data()  # 可选
+    df_15min = download_15min_data()
 
     signal_data = compute_daily_signals(df_daily)
+
+    # 实时盘中信号
+    realtime = compute_realtime_signal(df_daily, df_15min)
+    if realtime:
+        signal_data['realtime'] = realtime
+
     save_signal_json(signal_data)
 
     print('\n完成!')

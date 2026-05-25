@@ -1,38 +1,60 @@
-# 数据文件（不提交，由定时任务自动采集）
-data/*.csv
-data/*.txt
-
-# 结果文件（不提交，由定时任务自动生成）
-results/*.pkl
-results/*.txt
-
-# Python缓存
+# Python
 __pycache__/
 *.pyc
 *.pyo
 .ipynb_checkpoints/
 
-# 原始文档
-*.docx
-doc_content.txt
+# Data (auto-downloaded by run_signal.py on each Actions run)
+data/
 
-# 测试/临时脚本
+# Results (generated output)
+results/
+
+# Research / one-off analysis scripts
+strategies_all.py
+strategies_macro_enhanced.py
+macd_signals.py
+macd_detail_report.py
+macd_param_scan.py
+macd_opt_compare.py
+macd_yearly_compare.py
+macd_overfitting_test.py
+macd_overfitting_practical.py
+macd_trade_vs_bh.py
+macd_realtime_slippage.py
+macd_15min.py
+macd_15min_enhanced.py
+macd_15min_full_bt.py
+step1_data_collection.py
+enhanced_visualization.py
+visualization.py
+gen_full_data.py
+
+# Download scripts
+download_15min.py
+download_15min_v2.py
+download_15min_full.py
+try_etf_15min.py
+
+# Test / debug
 test_*.py
 explore_*.py
 extract_doc.py
 check_data.py
-download_15min.py
-download_15min_full.py
-download_15min_v2.py
-try_etf_15min.py
 
-# IDE
+# Generated reports (keep docs/index.html)
+backtest_report.html
+enhanced_report.html
+macd_heatmap.html
+*.pkl
+test_result.txt
+doc_content.txt
+
+# Original document
+*.docx
+
+# IDE / OS
 .vscode/
 .idea/
-
-# OS
 .DS_Store
 Thumbs.db
-
-# 信号输出（docs文件夹下的由Actions生成，保留index.html）
-# docs/signal_data.json 和 docs/index.html 会由CI生成并提交
