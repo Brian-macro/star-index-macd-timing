@@ -55,7 +55,7 @@ def download_daily_data():
     except Exception as e:
         print(f'  新浪日线失败: {e}')
 
-    # 也试试 akshare
+    # 也试试 akshare (optional)
     if len(all_data) < 100:
         try:
             import akshare as ak

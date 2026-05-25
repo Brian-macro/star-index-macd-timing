@@ -509,7 +509,7 @@ function render(d) {
   }
 
   // ── Module 5: 全部交易明细 ──
-  var tradesData = d.all_trades || d.recent_trades || [];
+  var tradesData = d.all_trades || [];
   if (tradesData.length) {
     h += '<div class="mod"><div class="mod-head">交易明细（共 ' + tradesData.length + ' 笔）</div>';
     h += '<div class="tbl-wrap"><div class="tbl-scroll"><table><thead><tr>';
@@ -529,7 +529,7 @@ function render(d) {
   }
 
   // ── Module 6: 全部信号历史 ──
-  var signalsData = d.all_signals || d.recent_signals || [];
+  var signalsData = d.all_signals || [];
   if (signalsData.length) {
     h += '<div class="mod"><div class="mod-head">信号历史（共 ' + signalsData.length + ' 个）</div>';
     h += '<div class="tbl-wrap"><div class="tbl-scroll"><table><thead><tr>';
