@@ -8,7 +8,7 @@
 
 ## 在线页面
 
-**[点击访问 GitHub Pages](https://2479550027-sudo.github.io/kcz-macd-signal/)**
+**[点击访问 GitHub Pages](https://brian-macro.github.io/star-index-macd-timing/)**
 
 页面展示当前持仓状态、盘中实时 MACD 监测、策略净值曲线、回测指标、年度收益对比、全部交易明细与信号历史。
 
