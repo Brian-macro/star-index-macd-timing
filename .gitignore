@@ -6,15 +6,8 @@ __pycache__/
 
 # Data - keep essential history, ignore rest
 data/*.txt
-data/kcz_15min_full.csv
-data/kcz_15min_sina.csv
-data/kc50etf_15min_full.csv
-data/kc50_daily.csv
-data/hs300_daily.csv
-data/macro_*.csv
-data/north_flow_raw.csv
+data/*.csv
 !data/kcz_daily.csv
-!data/kcz_15min.csv
 
 # Results (generated output)
 results/

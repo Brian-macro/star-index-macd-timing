@@ -8,14 +8,23 @@
     "position": "long",
     "position_cn": "持仓中"
   },
+  "approaching": {
+    "distance": 2.64,
+    "distance_pct": 6.32,
+    "direction": "DIF在DEA上方",
+    "approaching_dead": true,
+    "approaching_gold": false,
+    "alert": "⚠️ DIF 逼近 DEA，仅差 6.3%，即将死叉！注意风险"
+  },
   "performance": {
-    "total_return": 315.63,
-    "annual_return": 26.14,
-    "max_drawdown": -27.32,
-    "sharpe": 1.06,
+    "total_return": 357.39,
+    "annual_return": 28.12,
+    "max_drawdown": -26.56,
+    "sharpe": 1.12,
+    "calmar": 1.06,
     "total_trades": 42,
     "win_rate": 47.6,
-    "profit_factor": 3.16
+    "profit_factor": 3.48
   },
   "benchmark": {
     "total_return": 114.47,
@@ -713,7 +722,7 @@
       "return": 32.56,
       "bh_return": 33.35,
       "excess": -0.8,
-      "holding_days": 49
+      "holding_days": 0
     },
     {
       "entry_date": "2020-04-07",
@@ -723,7 +732,7 @@
       "return": 10.18,
       "bh_return": 15.99,
       "excess": -5.81,
-      "holding_days": 49
+      "holding_days": 0
     },
     {
       "entry_date": "2020-06-23",
@@ -733,7 +742,7 @@
       "return": 8.67,
       "bh_return": 5.68,
       "excess": 2.99,
-      "holding_days": 27
+      "holding_days": 0
     },
     {
       "entry_date": "2020-08-06",
@@ -743,7 +752,7 @@
       "return": -3.77,
       "bh_return": -5.9,
       "excess": 2.13,
-      "holding_days": 5
+      "holding_days": 0
     },
     {
       "entry_date": "2020-09-18",
@@ -753,7 +762,7 @@
       "return": -2.32,
       "bh_return": -6.3,
       "excess": 3.98,
-      "holding_days": 35
+      "holding_days": 0
     },
     {
       "entry_date": "2020-11-04",
@@ -763,7 +772,7 @@
       "return": -2.83,
       "bh_return": -2.66,
       "excess": -0.17,
-      "holding_days": 14
+      "holding_days": 0
     },
     {
       "entry_date": "2020-12-03",
@@ -773,7 +782,7 @@
       "return": -2.5,
       "bh_return": -2.76,
       "excess": 0.26,
-      "holding_days": 26
+      "holding_days": 0
     },
     {
       "entry_date": "2021-01-04",
@@ -783,7 +792,7 @@
       "return": 1.42,
       "bh_return": 0.12,
       "excess": 1.3,
-      "holding_days": 28
+      "holding_days": 0
     },
     {
       "entry_date": "2021-03-26",
@@ -793,7 +802,7 @@
       "return": 1.28,
       "bh_return": 0.23,
       "excess": 1.05,
-      "holding_days": 46
+      "holding_days": 0
     },
     {
       "entry_date": "2021-05-18",
@@ -803,7 +812,7 @@
       "return": 6.23,
       "bh_return": 11.44,
       "excess": -5.21,
-      "holding_days": 30
+      "holding_days": 0
     },
     {
       "entry_date": "2021-06-18",
@@ -813,7 +822,7 @@
       "return": 3.9,
       "bh_return": 5.72,
       "excess": -1.82,
-      "holding_days": 19
+      "holding_days": 0
     },
     {
       "entry_date": "2021-10-11",
@@ -823,7 +832,7 @@
       "return": -3.34,
       "bh_return": 0.13,
       "excess": -3.47,
-      "holding_days": 2
+      "holding_days": 0
     },
     {
       "entry_date": "2021-10-14",
@@ -833,7 +842,7 @@
       "return": 7.56,
       "bh_return": 8.31,
       "excess": -0.75,
-      "holding_days": 50
+      "holding_days": 0
     },
     {
       "entry_date": "2022-01-20",
@@ -843,7 +852,7 @@
       "return": -2.56,
       "bh_return": -1.76,
       "excess": -0.8,
-      "holding_days": 1
+      "holding_days": 0
     },
     {
       "entry_date": "2022-02-21",
@@ -853,7 +862,7 @@
       "return": -2.96,
       "bh_return": -2.77,
       "excess": -0.19,
-      "holding_days": 17
+      "holding_days": 0
     },
     {
       "entry_date": "2022-03-22",
@@ -863,7 +872,7 @@
       "return": -4.54,
       "bh_return": -4.88,
       "excess": 0.34,
-      "holding_days": 7
+      "holding_days": 0
     },
     {
       "entry_date": "2022-05-06",
@@ -873,7 +882,7 @@
       "return": 20.19,
       "bh_return": 17.05,
       "excess": 3.14,
-      "holding_days": 47
+      "holding_days": 0
     },
     {
       "entry_date": "2022-07-28",
@@ -883,7 +892,7 @@
       "return": 2.23,
       "bh_return": 1.93,
       "excess": 0.29,
-      "holding_days": 25
+      "holding_days": 0
     },
     {
       "entry_date": "2022-10-17",
@@ -893,7 +902,7 @@
       "return": 6.41,
       "bh_return": 6.07,
       "excess": 0.34,
-      "holding_days": 35
+      "holding_days": 0
     },
     {
       "entry_date": "2023-01-03",
@@ -903,7 +912,7 @@
       "return": 8.36,
       "bh_return": 4.1,
       "excess": 4.26,
-      "holding_days": 45
+      "holding_days": 0
     },
     {
       "entry_date": "2023-03-23",
@@ -913,7 +922,7 @@
       "return": 3.01,
       "bh_return": -0.35,
       "excess": 3.35,
-      "holding_days": 32
+      "holding_days": 0
     },
     {
       "entry_date": "2023-05-23",
@@ -923,7 +932,7 @@
       "return": -2.96,
       "bh_return": 0.15,
       "excess": -3.1,
-      "holding_days": 17
+      "holding_days": 0
     },
     {
       "entry_date": "2023-06-13",
@@ -933,7 +942,7 @@
       "return": -0.43,
       "bh_return": -1.96,
       "excess": 1.53,
-      "holding_days": 15
+      "holding_days": 0
     },
     {
       "entry_date": "2023-07-05",
@@ -943,7 +952,7 @@
       "return": -2.51,
       "bh_return": -1.3,
       "excess": -1.21,
-      "holding_days": 5
+      "holding_days": 0
     },
     {
       "entry_date": "2023-08-07",
@@ -953,7 +962,7 @@
       "return": -2.14,
       "bh_return": -1.01,
       "excess": -1.13,
-      "holding_days": 3
+      "holding_days": 0
     },
     {
       "entry_date": "2023-08-31",
@@ -963,7 +972,7 @@
       "return": -6.15,
       "bh_return": -6.62,
       "excess": 0.48,
-      "holding_days": 21
+      "holding_days": 0
     },
     {
       "entry_date": "2023-09-28",
@@ -973,7 +982,7 @@
       "return": -3.35,
       "bh_return": -3.39,
       "excess": 0.04,
-      "holding_days": 21
+      "holding_days": 0
     },
     {
       "entry_date": "2023-10-31",
@@ -983,7 +992,7 @@
       "return": 2.51,
       "bh_return": 1.71,
       "excess": 0.8,
-      "holding_days": 24
+      "holding_days": 0
     },
     {
       "entry_date": "2024-02-19",
@@ -993,7 +1002,7 @@
       "return": 5.43,
       "bh_return": 4.96,
       "excess": 0.48,
-      "holding_days": 36
+      "holding_days": 0
     },
     {
       "entry_date": "2024-04-29",
@@ -1003,7 +1012,7 @@
       "return": -0.01,
       "bh_return": -1.84,
       "excess": 1.83,
-      "holding_days": 23
+      "holding_days": 0
     },
     {
       "entry_date": "2024-06-14",
@@ -1013,7 +1022,7 @@
       "return": -4.46,
       "bh_return": -5.99,
       "excess": 1.53,
-      "holding_days": 11
+      "holding_days": 0
     },
     {
       "entry_date": "2024-07-15",
@@ -1023,7 +1032,7 @@
       "return": -4.17,
       "bh_return": -1.97,
       "excess": -2.2,
-      "holding_days": 31
+      "holding_days": 0
     },
     {
       "entry_date": "2024-09-04",
@@ -1033,7 +1042,7 @@
       "return": -2.28,
       "bh_return": -1.99,
       "excess": -0.29,
-      "holding_days": 6
+      "holding_days": 0
     },
     {
       "entry_date": "2024-09-12",
@@ -1043,7 +1052,7 @@
       "return": -2.38,
       "bh_return": -2.27,
       "excess": -0.1,
-      "holding_days": 6
+      "holding_days": 0
     },
     {
       "entry_date": "2024-09-25",
@@ -1053,7 +1062,7 @@
       "return": 36.61,
       "bh_return": 37.18,
       "excess": -0.58,
-      "holding_days": 35
+      "holding_days": 0
     },
     {
       "entry_date": "2024-11-12",
@@ -1063,7 +1072,7 @@
       "return": -5.7,
       "bh_return": -6.59,
       "excess": 0.88,
-      "holding_days": 3
+      "holding_days": 0
     },
     {
       "entry_date": "2025-01-20",
@@ -1073,7 +1082,7 @@
       "return": 15.63,
       "bh_return": 14.68,
       "excess": 0.95,
-      "holding_days": 51
+      "holding_days": 0
     },
     {
       "entry_date": "2025-04-18",
@@ -1083,7 +1092,7 @@
       "return": 0.76,
       "bh_return": 0.24,
       "excess": 0.53,
-      "holding_days": 35
+      "holding_days": 0
     },
     {
       "entry_date": "2025-06-05",
@@ -1093,7 +1102,7 @@
       "return": -0.28,
       "bh_return": -2.02,
       "excess": 1.74,
-      "holding_days": 14
+      "holding_days": 0
     },
     {
       "entry_date": "2025-06-26",
@@ -1103,7 +1112,7 @@
       "return": 22.47,
       "bh_return": 27.91,
       "excess": -5.44,
-      "holding_days": 71
+      "holding_days": 0
     },
     {
       "entry_date": "2025-09-25",
@@ -1113,7 +1122,7 @@
       "return": -5.33,
       "bh_return": -1.52,
       "excess": -3.8,
-      "holding_days": 18
+      "holding_days": 0
     },
     {
       "entry_date": "2025-12-03",
@@ -1123,453 +1132,439 @@
       "return": 16.19,
       "bh_return": 18.04,
       "excess": -1.84,
-      "holding_days": 58
+      "holding_days": 0
     }
   ],
   "nav_monthly": [
     {
       "date": "2020-01-23",
-      "strategy": 1.2399,
+      "strategy": 1.2432,
       "benchmark": 1.2456
     },
     {
       "date": "2020-02-28",
-      "strategy": 1.32,
+      "strategy": 1.3254,
       "benchmark": 1.1713
     },
     {
       "date": "2020-03-31",
-      "strategy": 1.32,
+      "strategy": 1.3254,
       "benchmark": 1.0232
     },
     {
       "date": "2020-04-30",
-      "strategy": 1.3851,
+      "strategy": 1.3927,
       "benchmark": 1.1642
     },
     {
       "date": "2020-05-29",
-      "strategy": 1.4502,
+      "strategy": 1.4601,
       "benchmark": 1.2486
     },
     {
       "date": "2020-06-30",
-      "strategy": 1.5327,
+      "strategy": 1.5456,
       "benchmark": 1.4345
     },
     {
       "date": "2020-07-31",
-      "strategy": 1.5716,
+      "strategy": 1.5867,
       "benchmark": 1.5324
     },
     {
       "date": "2020-08-31",
-      "strategy": 1.5099,
+      "strategy": 1.5269,
       "benchmark": 1.4161
     },
     {
       "date": "2020-09-30",
-      "strategy": 1.5122,
+      "strategy": 1.5308,
       "benchmark": 1.3752
     },
     {
       "date": "2020-10-30",
-      "strategy": 1.4723,
+      "strategy": 1.4915,
       "benchmark": 1.3513
     },
     {
       "date": "2020-11-30",
-      "strategy": 1.4281,
+      "strategy": 1.4492,
       "benchmark": 1.354
     },
     {
       "date": "2020-12-31",
-      "strategy": 1.3834,
+      "strategy": 1.4076,
       "benchmark": 1.419
     },
     {
       "date": "2021-01-29",
-      "strategy": 1.4068,
+      "strategy": 1.4332,
       "benchmark": 1.451
     },
     {
       "date": "2021-02-26",
-      "strategy": 1.4068,
+      "strategy": 1.4332,
       "benchmark": 1.3711
     },
     {
       "date": "2021-03-31",
-      "strategy": 1.429,
+      "strategy": 1.4574,
       "benchmark": 1.2974
     },
     {
       "date": "2021-04-30",
-      "strategy": 1.52,
+      "strategy": 1.5511,
       "benchmark": 1.3809
     },
     {
       "date": "2021-05-31",
-      "strategy": 1.5333,
+      "strategy": 1.5678,
       "benchmark": 1.4988
     },
     {
       "date": "2021-06-30",
-      "strategy": 1.6249,
+      "strategy": 1.6656,
       "benchmark": 1.6656
     },
     {
       "date": "2021-07-30",
-      "strategy": 1.5618,
+      "strategy": 1.602,
       "benchmark": 1.694
     },
     {
       "date": "2021-08-31",
-      "strategy": 1.5618,
+      "strategy": 1.602,
       "benchmark": 1.5903
     },
     {
       "date": "2021-09-30",
-      "strategy": 1.5618,
+      "strategy": 1.602,
       "benchmark": 1.4952
     },
     {
       "date": "2021-10-29",
-      "strategy": 1.5542,
+      "strategy": 1.5989,
       "benchmark": 1.5272
     },
     {
       "date": "2021-11-30",
-      "strategy": 1.6703,
+      "strategy": 1.7194,
       "benchmark": 1.6424
     },
     {
       "date": "2021-12-31",
-      "strategy": 1.6166,
+      "strategy": 1.6653,
       "benchmark": 1.5755
     },
     {
       "date": "2022-01-28",
-      "strategy": 1.5725,
+      "strategy": 1.6228,
       "benchmark": 1.3542
     },
     {
       "date": "2022-02-28",
-      "strategy": 1.6328,
+      "strategy": 1.6872,
       "benchmark": 1.3811
     },
     {
       "date": "2022-03-31",
-      "strategy": 1.452,
+      "strategy": 1.5032,
       "benchmark": 1.216
     },
     {
       "date": "2022-04-29",
-      "strategy": 1.452,
+      "strategy": 1.5032,
       "benchmark": 1.0454
     },
     {
       "date": "2022-05-31",
-      "strategy": 1.6315,
+      "strategy": 1.6924,
       "benchmark": 1.1627
     },
     {
       "date": "2022-06-30",
-      "strategy": 1.7389,
+      "strategy": 1.8065,
       "benchmark": 1.2695
     },
     {
       "date": "2022-07-29",
-      "strategy": 1.7327,
+      "strategy": 1.8018,
       "benchmark": 1.2969
     },
     {
       "date": "2022-08-31",
-      "strategy": 1.7738,
+      "strategy": 1.8467,
       "benchmark": 1.2267
     },
     {
       "date": "2022-09-30",
-      "strategy": 1.7738,
+      "strategy": 1.8467,
       "benchmark": 1.129
     },
     {
       "date": "2022-10-31",
-      "strategy": 1.8295,
+      "strategy": 1.9072,
       "benchmark": 1.2114
     },
     {
       "date": "2022-11-30",
-      "strategy": 1.8826,
+      "strategy": 1.965,
       "benchmark": 1.2039
     },
     {
       "date": "2022-12-30",
-      "strategy": 1.878,
+      "strategy": 1.9622,
       "benchmark": 1.1543
     },
     {
       "date": "2023-01-31",
-      "strategy": 2.0224,
+      "strategy": 2.1144,
       "benchmark": 1.2438
     },
     {
       "date": "2023-02-28",
-      "strategy": 2.0344,
+      "strategy": 2.1292,
       "benchmark": 1.2339
     },
     {
       "date": "2023-03-31",
-      "strategy": 2.0793,
+      "strategy": 2.1787,
       "benchmark": 1.2727
     },
     {
       "date": "2023-04-28",
-      "strategy": 2.0909,
+      "strategy": 2.1932,
       "benchmark": 1.2518
     },
     {
       "date": "2023-05-31",
-      "strategy": 2.1238,
+      "strategy": 2.2302,
       "benchmark": 1.2329
     },
     {
       "date": "2023-06-30",
-      "strategy": 2.0131,
+      "strategy": 2.1193,
       "benchmark": 1.2031
     },
     {
       "date": "2023-07-31",
-      "strategy": 1.9592,
+      "strategy": 2.0661,
       "benchmark": 1.1396
     },
     {
       "date": "2023-08-31",
-      "strategy": 1.9165,
+      "strategy": 2.0268,
       "benchmark": 1.0984
     },
     {
       "date": "2023-09-28",
-      "strategy": 1.8012,
+      "strategy": 1.9076,
       "benchmark": 1.0656
     },
     {
       "date": "2023-10-31",
-      "strategy": 1.7164,
+      "strategy": 1.8206,
       "benchmark": 1.0583
     },
     {
       "date": "2023-11-30",
-      "strategy": 1.7702,
+      "strategy": 1.88,
       "benchmark": 1.0889
     },
     {
       "date": "2023-12-29",
-      "strategy": 1.7702,
+      "strategy": 1.88,
       "benchmark": 1.0658
     },
     {
       "date": "2024-01-31",
-      "strategy": 1.7702,
+      "strategy": 1.88,
       "benchmark": 0.8174
     },
     {
       "date": "2024-02-29",
-      "strategy": 1.8802,
+      "strategy": 1.9999,
       "benchmark": 0.9402
     },
     {
       "date": "2024-03-29",
-      "strategy": 1.8618,
+      "strategy": 1.9822,
       "benchmark": 0.9185
     },
     {
       "date": "2024-04-30",
-      "strategy": 1.8908,
+      "strategy": 2.0153,
       "benchmark": 0.9215
     },
     {
       "date": "2024-05-31",
-      "strategy": 1.858,
+      "strategy": 1.982,
       "benchmark": 0.8934
     },
     {
       "date": "2024-06-28",
-      "strategy": 1.7723,
+      "strategy": 1.8936,
       "benchmark": 0.8389
     },
     {
       "date": "2024-07-31",
-      "strategy": 1.8018,
+      "strategy": 1.9273,
       "benchmark": 0.8433
     },
     {
       "date": "2024-08-30",
-      "strategy": 1.6957,
+      "strategy": 1.8146,
       "benchmark": 0.7898
     },
     {
       "date": "2024-09-30",
-      "strategy": 2.0659,
+      "strategy": 2.2252,
       "benchmark": 0.9925
     },
     {
       "date": "2024-10-31",
-      "strategy": 2.1923,
+      "strategy": 2.3647,
       "benchmark": 1.0681
     },
     {
       "date": "2024-11-29",
-      "strategy": 2.0643,
+      "strategy": 2.2299,
       "benchmark": 1.1199
     },
     {
       "date": "2024-12-31",
-      "strategy": 2.0643,
+      "strategy": 2.2299,
       "benchmark": 1.079
     },
     {
       "date": "2025-01-27",
-      "strategy": 2.0469,
+      "strategy": 2.2132,
       "benchmark": 1.0627
     },
     {
       "date": "2025-02-28",
-      "strategy": 2.2895,
+      "strategy": 2.4779,
       "benchmark": 1.1898
     },
     {
       "date": "2025-03-31",
-      "strategy": 2.3792,
+      "strategy": 2.5783,
       "benchmark": 1.1486
     },
     {
       "date": "2025-04-30",
-      "strategy": 2.4173,
+      "strategy": 2.6226,
       "benchmark": 1.1351
     },
     {
       "date": "2025-05-30",
-      "strategy": 2.3924,
+      "strategy": 2.598,
       "benchmark": 1.122
     },
     {
       "date": "2025-06-30",
-      "strategy": 2.4037,
+      "strategy": 2.6183,
       "benchmark": 1.1861
     },
     {
       "date": "2025-07-31",
-      "strategy": 2.5953,
+      "strategy": 2.8287,
       "benchmark": 1.2815
     },
     {
       "date": "2025-08-29",
-      "strategy": 3.1268,
+      "strategy": 3.4126,
       "benchmark": 1.5461
     },
     {
       "date": "2025-09-30",
-      "strategy": 2.9428,
+      "strategy": 3.217,
       "benchmark": 1.656
     },
     {
       "date": "2025-10-31",
-      "strategy": 2.7466,
+      "strategy": 3.0036,
       "benchmark": 1.5919
     },
     {
       "date": "2025-11-28",
-      "strategy": 2.7466,
+      "strategy": 3.0036,
       "benchmark": 1.5278
     },
     {
       "date": "2025-12-31",
-      "strategy": 2.8627,
+      "strategy": 3.1348,
       "benchmark": 1.5786
     },
     {
       "date": "2026-01-30",
-      "strategy": 3.1808,
+      "strategy": 3.4898,
       "benchmark": 1.7675
     },
     {
       "date": "2026-02-27",
-      "strategy": 3.1808,
+      "strategy": 3.4898,
       "benchmark": 1.7841
     },
     {
       "date": "2026-03-31",
-      "strategy": 3.1808,
+      "strategy": 3.4898,
       "benchmark": 1.5611
     },
     {
       "date": "2026-04-30",
-      "strategy": 3.6491,
+      "strategy": 4.0121,
       "benchmark": 1.8811
     },
     {
       "date": "2026-05-25",
-      "strategy": 4.1563,
+      "strategy": 4.5739,
       "benchmark": 2.1447
     }
   ],
   "yearly": [
     {
       "year": 2020,
-      "strategy": 38.3,
+      "strategy": 40.8,
       "benchmark": 41.9,
-      "excess": -3.6
+      "excess": -1.1
     },
     {
       "year": 2021,
-      "strategy": 14.5,
+      "strategy": 15.9,
       "benchmark": 8.8,
-      "excess": 5.7
+      "excess": 7.1
     },
     {
       "year": 2022,
-      "strategy": 16.2,
+      "strategy": 17.8,
       "benchmark": -25.4,
-      "excess": 41.6
+      "excess": 43.2
     },
     {
       "year": 2023,
-      "strategy": -8.1,
+      "strategy": -6.6,
       "benchmark": -10.0,
-      "excess": 1.9
+      "excess": 3.4
     },
     {
       "year": 2024,
-      "strategy": 16.6,
+      "strategy": 18.6,
       "benchmark": 2.9,
-      "excess": 13.7
+      "excess": 15.7
     },
     {
       "year": 2025,
-      "strategy": 38.7,
+      "strategy": 40.6,
       "benchmark": 51.0,
-      "excess": -12.4
+      "excess": -10.5
     },
     {
       "year": 2026,
-      "strategy": 40.2,
+      "strategy": 40.8,
       "benchmark": 31.1,
-      "excess": 9.0
+      "excess": 9.7
     }
   ],
-  "realtime": {
-    "time": "2026-05-25 15:00:00",
-    "price": 2223.69,
-    "rt_dif": 44.3678,
-    "rt_dea": 41.7313,
-    "rt_macd_bar": 5.273,
-    "prev_dif": 42.4465,
-    "prev_dea": 41.2919,
-    "distance": 2.6365,
-    "distance_pct": 6.38,
-    "cross_up": false,
-    "cross_down": false,
-    "approaching_cross": true,
-    "alert": "DIF在DEA上方, 距离2.64, 持仓中"
-  }
+  "update_time": "2026-05-25 20:48"
 }
