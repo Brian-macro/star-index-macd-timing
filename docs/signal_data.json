@@ -1,34 +1,34 @@
 {
   "current": {
-    "date": "2026-05-25",
-    "close": 2223.69,
-    "dif": 44.3678,
-    "dea": 41.7313,
-    "macd_bar": 5.273,
-    "position": "long",
-    "position_cn": "持仓中"
+    "date": "2026-05-27",
+    "close": 2136.75,
+    "dif": 39.5737,
+    "dea": 41.6488,
+    "macd_bar": -4.1503,
+    "position": "cash",
+    "position_cn": "空仓中"
   },
   "approaching": {
-    "distance": 2.64,
-    "distance_pct": 6.32,
-    "direction": "DIF在DEA上方",
-    "approaching_dead": true,
-    "approaching_gold": false,
-    "alert": "⚠️ DIF 逼近 DEA，仅差 6.3%，即将死叉！注意风险"
+    "distance": -2.08,
+    "distance_pct": 4.98,
+    "direction": "DIF在DEA下方",
+    "approaching_dead": false,
+    "approaching_gold": true,
+    "alert": "🔔 DIF 逼近 DEA，仅差 5.0%，即将金叉！准备买入"
   },
   "performance": {
-    "total_return": 357.39,
-    "annual_return": 28.12,
+    "total_return": 339.08,
+    "annual_return": 27.23,
     "max_drawdown": -26.56,
-    "sharpe": 1.12,
-    "calmar": 1.06,
-    "total_trades": 42,
-    "win_rate": 47.6,
-    "profit_factor": 3.48
+    "sharpe": 1.09,
+    "calmar": 1.03,
+    "total_trades": 43,
+    "win_rate": 48.8,
+    "profit_factor": 3.71
   },
   "benchmark": {
-    "total_return": 114.47,
-    "annual_return": 13.24,
+    "total_return": 106.08,
+    "annual_return": 12.49,
     "max_drawdown": -57.93
   },
   "all_signals": [
@@ -711,6 +711,14 @@
       "dif": -15.7549,
       "dea": -16.013,
       "macd_bar": 0.5162
+    },
+    {
+      "date": "2026-05-27",
+      "type": "sell",
+      "close": 2136.75,
+      "dif": 39.5737,
+      "dea": 41.6488,
+      "macd_bar": -4.1503
     }
   ],
   "all_trades": [
@@ -1133,6 +1141,16 @@
       "bh_return": 18.04,
       "excess": -1.84,
       "holding_days": 0
+    },
+    {
+      "entry_date": "2026-04-08",
+      "exit_date": "2026-05-27",
+      "entry_price": 1696.41,
+      "exit_price": 2134.61,
+      "return": 25.83,
+      "bh_return": 22.92,
+      "excess": 2.91,
+      "holding_days": 0
     }
   ],
   "nav_monthly": [
@@ -1517,9 +1535,9 @@
       "benchmark": 1.8811
     },
     {
-      "date": "2026-05-25",
-      "strategy": 4.5739,
-      "benchmark": 2.1447
+      "date": "2026-05-27",
+      "strategy": 4.3908,
+      "benchmark": 2.0608
     }
   ],
   "yearly": [
@@ -1561,10 +1579,10 @@
     },
     {
       "year": 2026,
-      "strategy": 40.8,
-      "benchmark": 31.1,
-      "excess": 9.7
+      "strategy": 35.2,
+      "benchmark": 26.0,
+      "excess": 9.2
     }
   ],
-  "update_time": "2026-05-25 20:48"
+  "update_time": "2026-05-27 08:09"
 }
