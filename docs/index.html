@@ -248,27 +248,40 @@
     border-radius: 16px;
     padding: 28px 24px 20px;
   }
-  .chart-bars {
-    display: flex; align-items: flex-end; gap: 6px;
-    height: 150px; padding-top: 28px;
+  .chart-wrap {
+    position: relative;
+    height: 150px;
   }
-  .bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; }
+  .chart-bars {
+    display: flex; gap: 6px;
+    height: 100%;
+  }
+  .bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; position: relative; }
   .bar-pair { display: flex; gap: 3px; align-items: flex-end; }
-  .bar { width: 20px; min-height: 2px; border-radius: 4px 4px 0 0; transition: height 0.5s var(--ease); position: relative; }
+  .bar { width: 20px; min-height: 2px; transition: height 0.5s var(--ease); position: relative; }
+  .bar.pos { border-radius: 4px 4px 0 0; }
+  .bar.neg { border-radius: 0 0 4px 4px; }
   .bar.sp { background: var(--green); }
   .bar.sn { background: var(--red); }
   .bar.bp { background: rgba(142,142,147,0.2); }
   .bar.bn { background: rgba(255,69,58,0.15); }
   .bar-tip {
-    position: absolute; top: -20px; left: 50%; transform: translateX(-50%);
+    position: absolute; left: 50%; transform: translateX(-50%);
     font-family: var(--mono); font-size: 10px; font-weight: 600; white-space: nowrap;
   }
+  .bar-tip.above { top: -18px; }
+  .bar-tip.below { bottom: -18px; }
   .bar-yr { font-size: 12px; color: var(--tertiary); margin-top: 8px; font-family: var(--mono); }
   .legend {
     display: flex; gap: 24px; justify-content: center;
     margin-top: 20px; font-size: 12px; color: var(--tertiary);
   }
   .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: middle; }
+  .chart-zero {
+    position: absolute; left: 0; right: 0; top: 50%;
+    border-top: 1px dashed rgba(84,84,88,0.25);
+    z-index: 0;
+  }
 
   /* ── Tables ── */
   .tbl-wrap {
@@ -564,18 +577,35 @@ function render(d) {
   if (d.yearly && d.yearly.length) {
     var mx = 0;
     d.yearly.forEach(function(y) { mx = Math.max(mx, Math.abs(y.strategy), Math.abs(y.benchmark)); });
+    var maxH = 55, scale = maxH / Math.max(mx, 1);
     h += '<div class="mod"><div class="mod-head">年度收益对比</div>';
-    h += '<div class="chart"><div class="chart-bars">';
+    h += '<div class="chart"><div class="chart-wrap">';
+    h += '<div class="chart-zero"></div>';
+    h += '<div class="chart-bars">';
     d.yearly.forEach(function(y) {
-      var sH = Math.abs(y.strategy) / mx * 110;
-      var bH = Math.abs(y.benchmark) / mx * 110;
-      h += '<div class="bar-col"><div class="bar-pair">';
-      h += '<div class="bar ' + (y.strategy >= 0 ? 'sp' : 'sn') + '" style="height:' + sH + 'px">';
-      h += '<span class="bar-tip ' + sign(y.strategy) + '">' + (y.strategy > 0 ? '+' : '') + y.strategy.toFixed(0) + '%</span></div>';
-      h += '<div class="bar ' + (y.benchmark >= 0 ? 'bp' : 'bn') + '" style="height:' + bH + 'px"></div>';
-      h += '</div><div class="bar-yr">' + y.year + '</div></div>';
+      h += '<div class="bar-col" style="position:relative">';
+      // Strategy bar
+      var sH = Math.round(Math.abs(y.strategy) * scale);
+      if (y.strategy >= 0) {
+        h += '<div class="bar sp pos" style="position:absolute;bottom:50%;left:50%;transform:translateX(-50%);width:20px;height:' + sH + 'px">';
+        h += '<span class="bar-tip above ' + sign(y.strategy) + '">+' + y.strategy.toFixed(0) + '%</span></div>';
+      } else {
+        h += '<div class="bar sn neg" style="position:absolute;top:50%;left:50%;transform:translateX(-50%);width:20px;height:' + sH + 'px">';
+        h += '<span class="bar-tip below ' + sign(y.strategy) + '">' + y.strategy.toFixed(0) + '%</span></div>';
+      }
+      // Benchmark bar
+      var bH = Math.round(Math.abs(y.benchmark) * scale);
+      if (y.benchmark >= 0) {
+        h += '<div class="bar bp pos" style="position:absolute;bottom:50%;left:calc(50% + 13px);width:20px;height:' + bH + 'px">';
+        h += '<span class="bar-tip above ' + sign(y.benchmark) + '">+' + y.benchmark.toFixed(0) + '%</span></div>';
+      } else {
+        h += '<div class="bar bn neg" style="position:absolute;top:50%;left:calc(50% + 13px);width:20px;height:' + bH + 'px">';
+        h += '<span class="bar-tip below ' + sign(y.benchmark) + '">' + y.benchmark.toFixed(0) + '%</span></div>';
+      }
+      h += '<div class="bar-yr">' + y.year + '</div>';
+      h += '</div>';
     });
-    h += '</div>';
+    h += '</div></div>';
     h += '<div class="legend"><span><i style="background:var(--green)"></i>策略</span><span><i style="background:rgba(142,142,147,0.3)"></i>基准</span></div>';
     h += '</div></div>';
   }
