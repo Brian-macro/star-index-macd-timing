@@ -1,34 +1,34 @@
 {
   "current": {
-    "date": "2026-05-27",
-    "close": 2136.75,
-    "dif": 39.5737,
-    "dea": 41.6488,
-    "macd_bar": -4.1503,
+    "date": "2026-05-28",
+    "close": 2174.33,
+    "dif": 37.7297,
+    "dea": 41.0889,
+    "macd_bar": -6.7185,
     "position": "cash",
     "position_cn": "空仓中"
   },
   "approaching": {
-    "distance": -2.08,
-    "distance_pct": 4.98,
+    "distance": -3.36,
+    "distance_pct": 8.18,
     "direction": "DIF在DEA下方",
     "approaching_dead": false,
-    "approaching_gold": true,
-    "alert": "🔔 DIF 逼近 DEA，仅差 5.0%，即将金叉！准备买入"
+    "approaching_gold": false,
+    "alert": "DIF 在 DEA 下方 8.2%，可关注"
   },
   "performance": {
-    "total_return": 339.08,
-    "annual_return": 27.23,
+    "total_return": 337.51,
+    "annual_return": 27.14,
     "max_drawdown": -26.56,
     "sharpe": 1.09,
-    "calmar": 1.03,
+    "calmar": 1.02,
     "total_trades": 43,
     "win_rate": 48.8,
     "profit_factor": 3.71
   },
   "benchmark": {
-    "total_return": 106.08,
-    "annual_return": 12.49,
+    "total_return": 109.71,
+    "annual_return": 12.8,
     "max_drawdown": -57.93
   },
   "all_signals": [
@@ -1144,12 +1144,12 @@
     },
     {
       "entry_date": "2026-04-08",
-      "exit_date": "2026-05-27",
+      "exit_date": "2026-05-28",
       "entry_price": 1696.41,
-      "exit_price": 2134.61,
-      "return": 25.83,
-      "bh_return": 22.92,
-      "excess": 2.91,
+      "exit_price": 2126.99,
+      "return": 25.38,
+      "bh_return": 25.08,
+      "excess": 0.3,
       "holding_days": 0
     }
   ],
@@ -1535,9 +1535,9 @@
       "benchmark": 1.8811
     },
     {
-      "date": "2026-05-27",
-      "strategy": 4.3908,
-      "benchmark": 2.0608
+      "date": "2026-05-28",
+      "strategy": 4.3751,
+      "benchmark": 2.0971
     }
   ],
   "yearly": [
@@ -1579,10 +1579,10 @@
     },
     {
       "year": 2026,
-      "strategy": 35.2,
-      "benchmark": 26.0,
-      "excess": 9.2
+      "strategy": 34.7,
+      "benchmark": 28.2,
+      "excess": 6.5
     }
   ],
-  "update_time": "2026-05-27 11:03"
+  "update_time": "2026-05-28 11:05"
 }
