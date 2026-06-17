@@ -1,24 +1,24 @@
 {
   "current": {
-    "date": "2026-06-16",
-    "close": 2155.57,
-    "dif": 5.3641,
-    "dea": 8.0356,
-    "macd_bar": -5.3429,
-    "position": "cash",
-    "position_cn": "空仓中"
+    "date": "2026-06-17",
+    "close": 2224.7,
+    "dif": 12.2613,
+    "dea": 8.6393,
+    "macd_bar": 7.244,
+    "position": "long",
+    "position_cn": "持仓中"
   },
   "approaching": {
-    "distance": -2.67,
-    "distance_pct": 33.25,
-    "direction": "DIF在DEA下方",
+    "distance": 3.62,
+    "distance_pct": 41.92,
+    "direction": "DIF在DEA上方",
     "approaching_dead": false,
     "approaching_gold": false,
-    "alert": "DIF 在 DEA 下方 33.2%，距离较远"
+    "alert": "DIF 在 DEA 上方 41.9%，距离较远"
   },
   "performance": {
-    "total_return": 337.51,
-    "annual_return": 26.89,
+    "total_return": 337.07,
+    "annual_return": 26.85,
     "max_drawdown": -26.56,
     "sharpe": 1.08,
     "calmar": 1.01,
@@ -27,8 +27,8 @@
     "profit_factor": 3.71
   },
   "benchmark": {
-    "total_return": 107.9,
-    "annual_return": 12.53,
+    "total_return": 114.57,
+    "annual_return": 13.1,
     "max_drawdown": -57.93
   },
   "all_signals": [
@@ -719,6 +719,14 @@
       "dif": 39.5737,
       "dea": 41.6488,
       "macd_bar": -4.1503
+    },
+    {
+      "date": "2026-06-17",
+      "type": "buy",
+      "close": 2224.7,
+      "dif": 12.2613,
+      "dea": 8.6393,
+      "macd_bar": 7.244
     }
   ],
   "all_trades": [
@@ -1540,9 +1548,9 @@
       "benchmark": 1.997
     },
     {
-      "date": "2026-06-16",
-      "strategy": 4.3751,
-      "benchmark": 2.079
+      "date": "2026-06-17",
+      "strategy": 4.3707,
+      "benchmark": 2.1457
     }
   ],
   "yearly": [
@@ -1584,10 +1592,10 @@
     },
     {
       "year": 2026,
-      "strategy": 34.7,
-      "benchmark": 27.1,
-      "excess": 7.6
+      "strategy": 34.6,
+      "benchmark": 31.2,
+      "excess": 3.4
     }
   ],
-  "update_time": "2026-06-16 12:26"
+  "update_time": "2026-06-17 12:02"
 }
