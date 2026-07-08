@@ -1,34 +1,34 @@
 {
   "current": {
-    "date": "2026-07-07",
-    "close": 2315.59,
-    "dif": 34.537,
-    "dea": 37.9894,
-    "macd_bar": -6.9048,
+    "date": "2026-07-08",
+    "close": 2305.5,
+    "dif": 29.5694,
+    "dea": 36.7865,
+    "macd_bar": -14.4341,
     "position": "cash",
     "position_cn": "空仓中"
   },
   "approaching": {
-    "distance": -3.45,
-    "distance_pct": 9.09,
+    "distance": -7.22,
+    "distance_pct": 19.62,
     "direction": "DIF在DEA下方",
     "approaching_dead": false,
     "approaching_gold": false,
-    "alert": "DIF 在 DEA 下方 9.1%，可关注"
+    "alert": "DIF 在 DEA 下方 19.6%，可关注"
   },
   "performance": {
-    "total_return": 355.41,
-    "annual_return": 27.43,
+    "total_return": 358.78,
+    "annual_return": 27.56,
     "max_drawdown": -26.56,
-    "sharpe": 1.09,
-    "calmar": 1.03,
+    "sharpe": 1.1,
+    "calmar": 1.04,
     "total_trades": 44,
     "win_rate": 50.0,
-    "profit_factor": 3.6
+    "profit_factor": 3.61
   },
   "benchmark": {
-    "total_return": 123.33,
-    "annual_return": 13.71,
+    "total_return": 122.36,
+    "annual_return": 13.62,
     "max_drawdown": -57.93
   },
   "all_signals": [
@@ -1170,12 +1170,12 @@
     },
     {
       "entry_date": "2026-06-18",
-      "exit_date": "2026-07-07",
+      "exit_date": "2026-07-08",
       "entry_price": 2222.31,
-      "exit_price": 2313.27,
-      "return": 4.09,
-      "bh_return": 0.77,
-      "excess": 3.32,
+      "exit_price": 2330.42,
+      "return": 4.86,
+      "bh_return": 0.33,
+      "excess": 4.54,
       "holding_days": 0
     }
   ],
@@ -1571,9 +1571,9 @@
       "benchmark": 2.4308
     },
     {
-      "date": "2026-07-07",
-      "strategy": 4.5541,
-      "benchmark": 2.2333
+      "date": "2026-07-08",
+      "strategy": 4.5878,
+      "benchmark": 2.2236
     }
   ],
   "yearly": [
@@ -1615,10 +1615,10 @@
     },
     {
       "year": 2026,
-      "strategy": 40.2,
-      "benchmark": 36.5,
-      "excess": 3.7
+      "strategy": 41.2,
+      "benchmark": 36.0,
+      "excess": 5.3
     }
   ],
-  "update_time": "2026-07-07 10:37"
+  "update_time": "2026-07-08 09:44"
 }
