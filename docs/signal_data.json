@@ -1,24 +1,24 @@
 {
   "current": {
-    "date": "2026-07-10",
-    "close": 2348.75,
-    "dif": 29.3502,
-    "dea": 35.2368,
-    "macd_bar": -11.7733,
+    "date": "2026-07-13",
+    "close": 2246.33,
+    "dif": 21.2825,
+    "dea": 33.2433,
+    "macd_bar": -23.9216,
     "position": "cash",
     "position_cn": "空仓中"
   },
   "approaching": {
-    "distance": -5.89,
-    "distance_pct": 16.71,
+    "distance": -11.96,
+    "distance_pct": 35.98,
     "direction": "DIF在DEA下方",
     "approaching_dead": false,
     "approaching_gold": false,
-    "alert": "DIF 在 DEA 下方 16.7%，可关注"
+    "alert": "DIF 在 DEA 下方 36.0%，距离较远"
   },
   "performance": {
     "total_return": 358.78,
-    "annual_return": 27.52,
+    "annual_return": 27.5,
     "max_drawdown": -26.56,
     "sharpe": 1.1,
     "calmar": 1.04,
@@ -27,8 +27,8 @@
     "profit_factor": 3.61
   },
   "benchmark": {
-    "total_return": 126.53,
-    "annual_return": 13.94,
+    "total_return": 116.65,
+    "annual_return": 13.12,
     "max_drawdown": -57.93
   },
   "all_signals": [
@@ -1571,9 +1571,9 @@
       "benchmark": 2.4308
     },
     {
-      "date": "2026-07-10",
+      "date": "2026-07-13",
       "strategy": 4.5878,
-      "benchmark": 2.2653
+      "benchmark": 2.1665
     }
   ],
   "yearly": [
@@ -1616,9 +1616,9 @@
     {
       "year": 2026,
       "strategy": 41.2,
-      "benchmark": 38.5,
-      "excess": 2.7
+      "benchmark": 32.5,
+      "excess": 8.8
     }
   ],
-  "update_time": "2026-07-10 10:33"
+  "update_time": "2026-07-13 10:38"
 }
