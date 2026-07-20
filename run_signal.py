@@ -10,6 +10,7 @@ import sys
 import os
 import json
 from datetime import datetime
+from zoneinfo import ZoneInfo
 
 sys.stdout.reconfigure(encoding='utf-8')
 os.environ['NO_PROXY'] = '*'
@@ -25,6 +26,144 @@ os.makedirs(DATA_DIR, exist_ok=True)
 os.makedirs(DOCS_DIR, exist_ok=True)
 
 FEE = 0.001  # 千一单边手续费
+
+
+def calculate_holding_days(entry_date, exit_date):
+    """Return the calendar-day distance between two trade dates."""
+    return int((pd.Timestamp(exit_date) - pd.Timestamp(entry_date)).days)
+
+
+def calculate_macd(close):
+    """Calculate MACD(12/18/13) arrays from a close-price sequence."""
+    series = pd.Series(close, dtype=float)
+    ema12 = series.ewm(span=12, adjust=False).mean().to_numpy()
+    ema18 = series.ewm(span=18, adjust=False).mean().to_numpy()
+    dif = ema12 - ema18
+    dea = pd.Series(dif).ewm(span=13, adjust=False).mean().to_numpy()
+    return dif, dea, 2 * (dif - dea)
+
+
+def parse_sina_quote(payload):
+    """Parse the comma-delimited Sina real-time index quote response."""
+    if '="' not in payload:
+        raise ValueError('新浪实时行情格式无效')
+    body = payload.split('="', 1)[1].rsplit('"', 1)[0]
+    fields = body.split(',')
+    if len(fields) < 33 or not fields[0]:
+        raise ValueError('新浪实时行情字段不完整')
+    return {
+        'name': fields[0],
+        'open': float(fields[1]),
+        'previous_close': float(fields[2]),
+        'price': float(fields[3]),
+        'high': float(fields[4]),
+        'low': float(fields[5]),
+        'volume': float(fields[8]),
+        'date': fields[30],
+        'time': fields[31],
+        'source': 'sina_realtime',
+    }
+
+
+def download_realtime_quote():
+    """Download the latest STAR Composite quote from Sina."""
+    url = 'https://hq.sinajs.cn/list=sh000680'
+    response = requests.get(
+        url,
+        timeout=30,
+        headers={'Referer': 'https://finance.sina.com.cn/'},
+        proxies={'http': None, 'https': None},
+    )
+    response.raise_for_status()
+    response.encoding = 'gbk'
+    return parse_sina_quote(response.text)
+
+
+def build_live_frame(df, quote, allow_same_date=False):
+    """Return a copy of daily data with the current real-time quote upserted."""
+    live = df.copy(deep=True)
+    quote_date = pd.Timestamp(quote['date']).normalize()
+    row = {
+        'date': quote_date,
+        'open': quote['open'],
+        'high': quote['high'],
+        'low': quote['low'],
+        'close': quote['price'],
+        'volume': quote['volume'],
+    }
+    if not live.empty:
+        last_date = live['date'].dt.normalize().max()
+        if quote_date < last_date or (quote_date == last_date and not allow_same_date):
+            return live
+    matches = live['date'].dt.normalize() == quote_date
+    if matches.any():
+        for key, value in row.items():
+            live.loc[matches, key] = value
+    else:
+        live = pd.concat([live, pd.DataFrame([row])], ignore_index=True)
+    return live.sort_values('date').reset_index(drop=True)
+
+
+def build_intraday_snapshot(df, quote, valuation):
+    """Build an estimated current-day signal and NAV without mutating history."""
+    live = build_live_frame(df, quote)
+    confirmed_dif, confirmed_dea, _ = calculate_macd(df['close'].to_numpy())
+    dif, dea, macd_bar = calculate_macd(live['close'].to_numpy())
+    previous_relation = float(confirmed_dif[-1] - confirmed_dea[-1])
+    live_relation = float(dif[-1] - dea[-1])
+    if previous_relation <= 0 < live_relation:
+        signal_type, signal_label = 'buy', '预估买入信号'
+    elif previous_relation >= 0 > live_relation:
+        signal_type, signal_label = 'sell', '预估卖出信号'
+    else:
+        signal_type, signal_label = 'none', '暂无预估穿越信号'
+
+    price = float(quote['price'])
+    strategy_nav = (float(valuation['cash']) + int(valuation['shares']) * price) / 1_000_000
+    benchmark_nav = price / float(valuation['first_close'])
+    generated = datetime.now(ZoneInfo('Asia/Shanghai')).strftime('%Y-%m-%d %H:%M:%S')
+    return {
+        'market_time': f"{quote['date']} {quote['time']}",
+        'generated_time': generated,
+        'price': round(price, 4),
+        'dif': round(float(dif[-1]), 4),
+        'dea': round(float(dea[-1]), 4),
+        'macd_bar': round(float(macd_bar[-1]), 4),
+        'position': 'long' if int(valuation['shares']) > 0 else 'cash',
+        'signal_type': signal_type,
+        'signal_label': signal_label,
+        'is_estimated': True,
+        'strategy_nav': round(strategy_nav, 4),
+        'benchmark_nav': round(benchmark_nav, 4),
+    }
+
+
+def resolve_run_phase(requested='auto', now=None):
+    """Resolve whether this invocation is intraday estimation or close confirmation."""
+    requested = (requested or 'auto').lower()
+    if requested in {'intraday', 'close'}:
+        return requested
+    if requested != 'auto':
+        raise ValueError(f'不支持的 SIGNAL_PHASE: {requested}')
+    current = now or datetime.now(ZoneInfo('Asia/Shanghai'))
+    return 'close' if (current.hour, current.minute) >= (15, 30) else 'intraday'
+
+
+def prepare_confirmed_data(df, quote, phase):
+    """Merge the live bar only for a close-confirmation run."""
+    if phase == 'close' and quote:
+        return build_live_frame(df, quote, allow_same_date=True)
+    return df.copy(deep=True)
+
+
+def select_confirmed_history(df, quote, phase, now=None):
+    """Exclude an unfinished current-day bar from intraday backtest history."""
+    if phase == 'close':
+        return prepare_confirmed_data(df, quote, phase)
+    current = now or datetime.now(ZoneInfo('Asia/Shanghai'))
+    cutoff = pd.Timestamp(current.date())
+    confirmed = df[df['date'].dt.normalize() < cutoff].copy()
+    return confirmed.reset_index(drop=True)
 
 
 # ========================================================================
@@ -100,11 +239,7 @@ def compute_signals(df):
     dates = df['date']
 
     # MACD(12/18/13)
-    ema12 = pd.Series(close).ewm(span=12, adjust=False).mean().values
-    ema18 = pd.Series(close).ewm(span=18, adjust=False).mean().values
-    dif = ema12 - ema18
-    dea = pd.Series(dif).ewm(span=13, adjust=False).mean().values
-    macd_bar = 2 * (dif - dea)
+    dif, dea, macd_bar = calculate_macd(close)
 
     # --- 信号列表 ---
     gold = (dif > dea) & (np.roll(dif, 1) <= np.roll(dea, 1))
@@ -132,25 +267,18 @@ def compute_signals(df):
     for i in range(len(df)):
         price = float(close[i])
 
-        if pos == 0 and gold[i]:
-            if i + 1 < len(df):
-                cost = float(open_p[i + 1]) * (1 + FEE)
-            else:
-                cost = price * (1 + FEE)
+        if pos == 0 and gold[i] and i + 1 < len(df):
+            cost = float(open_p[i + 1]) * (1 + FEE)
             shares = int(cash * 0.9999 / cost)
             if shares > 0:
                 cash -= shares * cost
                 pos = 1
                 entry_price = cost
-                entry_date = dates.iloc[i + 1] if i + 1 < len(df) else dates.iloc[i]
+                entry_date = dates.iloc[i + 1]
 
-        elif pos == 1 and dead[i]:
-            if i + 1 < len(df):
-                proceeds = float(open_p[i + 1]) * (1 - FEE)
-                exit_date = dates.iloc[i + 1]
-            else:
-                proceeds = price * (1 - FEE)
-                exit_date = dates.iloc[i]
+        elif pos == 1 and dead[i] and i + 1 < len(df):
+            proceeds = float(open_p[i + 1]) * (1 - FEE)
+            exit_date = dates.iloc[i + 1]
 
             cash += shares * proceeds
             ret_pct = (proceeds / entry_price - 1) * 100
@@ -160,7 +288,7 @@ def compute_signals(df):
             bh_ex = float(df[df['date'] == exit_date]['close'].iloc[0]) if len(df[df['date'] == exit_date]) > 0 else proceeds
             bh_ret = (bh_ex / bh_en - 1) * 100
 
-            hold_days = (exit_date - entry_date).days if hasattr(exit_date, 'days') else 0
+            hold_days = calculate_holding_days(entry_date, exit_date)
 
             trades.append({
                 'entry_date': entry_date.strftime('%Y-%m-%d') if hasattr(entry_date, 'strftime') else str(entry_date)[:10],
@@ -294,6 +422,11 @@ def compute_signals(df):
         'all_trades': trades,
         'nav_monthly': nav_monthly,
         'yearly': yearly,
+        '_valuation': {
+            'cash': cash,
+            'shares': shares,
+            'first_close': float(close[0]),
+        },
         'update_time': datetime.now().strftime('%Y-%m-%d %H:%M'),
     }
 
@@ -318,8 +451,44 @@ def main():
     print('=' * 55)
     print()
 
+    phase = resolve_run_phase(os.environ.get('SIGNAL_PHASE', 'auto'))
     df = download_daily_data()
-    result = compute_signals(df)
+    quote = None
+    quote_error = ''
+    try:
+        quote = download_realtime_quote()
+        print(f"  实时行情: {quote['date']} {quote['time']}  {quote['price']:.2f}")
+    except Exception as exc:
+        quote_error = str(exc)
+        print(f'  实时行情失败: {exc}')
+
+    confirmed_df = select_confirmed_history(df, quote, phase)
+    result = compute_signals(confirmed_df)
+    valuation = result.pop('_valuation')
+    generated_time = datetime.now(ZoneInfo('Asia/Shanghai')).strftime('%Y-%m-%d %H:%M:%S')
+    if phase == 'intraday' and quote:
+        result['intraday'] = build_intraday_snapshot(confirmed_df, quote, valuation)
+
+    market_time = (
+        f"{quote['date']} {quote['time']}"
+        if quote
+        else f"{result['current']['date']} 收盘"
+    )
+    result['signal_status'] = {
+        'phase': phase,
+        'is_estimated': phase == 'intraday',
+        'label': (
+            result.get('intraday', {}).get('signal_label', '盘中估算')
+            if phase == 'intraday'
+            else '收盘确认'
+        ),
+    }
+    result['data_source'] = quote['source'] if quote else 'sina_daily_cache'
+    result['market_time'] = market_time
+    result['generated_time'] = generated_time
+    if quote_error:
+        result['data_warning'] = f'实时行情不可用：{quote_error}'
+    result['update_time'] = generated_time
     save_signal_json(result)
 
     print('\n完成!')

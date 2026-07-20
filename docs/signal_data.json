@@ -746,7 +746,7 @@
       "return": 32.56,
       "bh_return": 33.35,
       "excess": -0.8,
-      "holding_days": 0
+      "holding_days": 49
     },
     {
       "entry_date": "2020-04-07",
@@ -756,7 +756,7 @@
       "return": 10.18,
       "bh_return": 15.99,
       "excess": -5.81,
-      "holding_days": 0
+      "holding_days": 49
     },
     {
       "entry_date": "2020-06-23",
@@ -766,7 +766,7 @@
       "return": 8.67,
       "bh_return": 5.68,
       "excess": 2.99,
-      "holding_days": 0
+      "holding_days": 27
     },
     {
       "entry_date": "2020-08-06",
@@ -776,7 +776,7 @@
       "return": -3.77,
       "bh_return": -5.9,
       "excess": 2.13,
-      "holding_days": 0
+      "holding_days": 5
     },
     {
       "entry_date": "2020-09-18",
@@ -786,7 +786,7 @@
       "return": -2.32,
       "bh_return": -6.3,
       "excess": 3.98,
-      "holding_days": 0
+      "holding_days": 35
     },
     {
       "entry_date": "2020-11-04",
@@ -796,7 +796,7 @@
       "return": -2.83,
       "bh_return": -2.66,
       "excess": -0.17,
-      "holding_days": 0
+      "holding_days": 14
     },
     {
       "entry_date": "2020-12-03",
@@ -806,7 +806,7 @@
       "return": -2.5,
       "bh_return": -2.76,
       "excess": 0.26,
-      "holding_days": 0
+      "holding_days": 26
     },
     {
       "entry_date": "2021-01-04",
@@ -816,7 +816,7 @@
       "return": 1.42,
       "bh_return": 0.12,
       "excess": 1.3,
-      "holding_days": 0
+      "holding_days": 28
     },
     {
       "entry_date": "2021-03-26",
@@ -826,7 +826,7 @@
       "return": 1.28,
       "bh_return": 0.23,
       "excess": 1.05,
-      "holding_days": 0
+      "holding_days": 46
     },
     {
       "entry_date": "2021-05-18",
@@ -836,7 +836,7 @@
       "return": 6.23,
       "bh_return": 11.44,
       "excess": -5.21,
-      "holding_days": 0
+      "holding_days": 30
     },
     {
       "entry_date": "2021-06-18",
@@ -846,7 +846,7 @@
       "return": 3.9,
       "bh_return": 5.72,
       "excess": -1.82,
-      "holding_days": 0
+      "holding_days": 19
     },
     {
       "entry_date": "2021-10-11",
@@ -856,7 +856,7 @@
       "return": -3.34,
       "bh_return": 0.13,
       "excess": -3.47,
-      "holding_days": 0
+      "holding_days": 2
     },
     {
       "entry_date": "2021-10-14",
@@ -866,7 +866,7 @@
       "return": 7.56,
       "bh_return": 8.31,
       "excess": -0.75,
-      "holding_days": 0
+      "holding_days": 50
     },
     {
       "entry_date": "2022-01-20",
@@ -876,7 +876,7 @@
       "return": -2.56,
       "bh_return": -1.76,
       "excess": -0.8,
-      "holding_days": 0
+      "holding_days": 1
     },
     {
       "entry_date": "2022-02-21",
@@ -886,7 +886,7 @@
       "return": -2.96,
       "bh_return": -2.77,
       "excess": -0.19,
-      "holding_days": 0
+      "holding_days": 17
     },
     {
       "entry_date": "2022-03-22",
@@ -896,7 +896,7 @@
       "return": -4.54,
       "bh_return": -4.88,
       "excess": 0.34,
-      "holding_days": 0
+      "holding_days": 7
     },
     {
       "entry_date": "2022-05-06",
@@ -906,7 +906,7 @@
       "return": 20.19,
       "bh_return": 17.05,
       "excess": 3.14,
-      "holding_days": 0
+      "holding_days": 47
     },
     {
       "entry_date": "2022-07-28",
@@ -916,7 +916,7 @@
       "return": 2.23,
       "bh_return": 1.93,
       "excess": 0.29,
-      "holding_days": 0
+      "holding_days": 25
     },
     {
       "entry_date": "2022-10-17",
@@ -926,7 +926,7 @@
       "return": 6.41,
       "bh_return": 6.07,
       "excess": 0.34,
-      "holding_days": 0
+      "holding_days": 35
     },
     {
       "entry_date": "2023-01-03",
@@ -936,7 +936,7 @@
       "return": 8.36,
       "bh_return": 4.1,
       "excess": 4.26,
-      "holding_days": 0
+      "holding_days": 45
     },
     {
       "entry_date": "2023-03-23",
@@ -946,7 +946,7 @@
       "return": 3.01,
       "bh_return": -0.35,
       "excess": 3.35,
-      "holding_days": 0
+      "holding_days": 32
     },
     {
       "entry_date": "2023-05-23",
@@ -956,7 +956,7 @@
       "return": -2.96,
       "bh_return": 0.15,
       "excess": -3.1,
-      "holding_days": 0
+      "holding_days": 17
     },
     {
       "entry_date": "2023-06-13",
@@ -966,7 +966,7 @@
       "return": -0.43,
       "bh_return": -1.96,
       "excess": 1.53,
-      "holding_days": 0
+      "holding_days": 15
     },
     {
       "entry_date": "2023-07-05",
@@ -976,7 +976,7 @@
       "return": -2.51,
       "bh_return": -1.3,
       "excess": -1.21,
-      "holding_days": 0
+      "holding_days": 5
     },
     {
       "entry_date": "2023-08-07",
@@ -986,7 +986,7 @@
       "return": -2.14,
       "bh_return": -1.01,
       "excess": -1.13,
-      "holding_days": 0
+      "holding_days": 3
     },
     {
       "entry_date": "2023-08-31",
@@ -996,7 +996,7 @@
       "return": -6.15,
       "bh_return": -6.62,
       "excess": 0.48,
-      "holding_days": 0
+      "holding_days": 21
     },
     {
       "entry_date": "2023-09-28",
@@ -1006,7 +1006,7 @@
       "return": -3.35,
       "bh_return": -3.39,
       "excess": 0.04,
-      "holding_days": 0
+      "holding_days": 21
     },
     {
       "entry_date": "2023-10-31",
@@ -1016,7 +1016,7 @@
       "return": 2.51,
       "bh_return": 1.71,
       "excess": 0.8,
-      "holding_days": 0
+      "holding_days": 24
     },
     {
       "entry_date": "2024-02-19",
@@ -1026,7 +1026,7 @@
       "return": 5.43,
       "bh_return": 4.96,
       "excess": 0.48,
-      "holding_days": 0
+      "holding_days": 36
     },
     {
       "entry_date": "2024-04-29",
@@ -1036,7 +1036,7 @@
       "return": -0.01,
       "bh_return": -1.84,
       "excess": 1.83,
-      "holding_days": 0
+      "holding_days": 23
     },
     {
       "entry_date": "2024-06-14",
@@ -1046,7 +1046,7 @@
       "return": -4.46,
       "bh_return": -5.99,
       "excess": 1.53,
-      "holding_days": 0
+      "holding_days": 11
     },
     {
       "entry_date": "2024-07-15",
@@ -1056,7 +1056,7 @@
       "return": -4.17,
       "bh_return": -1.97,
       "excess": -2.2,
-      "holding_days": 0
+      "holding_days": 31
     },
     {
       "entry_date": "2024-09-04",
@@ -1066,7 +1066,7 @@
       "return": -2.28,
       "bh_return": -1.99,
       "excess": -0.29,
-      "holding_days": 0
+      "holding_days": 6
     },
     {
       "entry_date": "2024-09-12",
@@ -1076,7 +1076,7 @@
       "return": -2.38,
       "bh_return": -2.27,
       "excess": -0.1,
-      "holding_days": 0
+      "holding_days": 6
     },
     {
       "entry_date": "2024-09-25",
@@ -1086,7 +1086,7 @@
       "return": 36.61,
       "bh_return": 37.18,
       "excess": -0.58,
-      "holding_days": 0
+      "holding_days": 35
     },
     {
       "entry_date": "2024-11-12",
@@ -1096,7 +1096,7 @@
       "return": -5.7,
       "bh_return": -6.59,
       "excess": 0.88,
-      "holding_days": 0
+      "holding_days": 3
     },
     {
       "entry_date": "2025-01-20",
@@ -1106,7 +1106,7 @@
       "return": 15.63,
       "bh_return": 14.68,
       "excess": 0.95,
-      "holding_days": 0
+      "holding_days": 51
     },
     {
       "entry_date": "2025-04-18",
@@ -1116,7 +1116,7 @@
       "return": 0.76,
       "bh_return": 0.24,
       "excess": 0.53,
-      "holding_days": 0
+      "holding_days": 35
     },
     {
       "entry_date": "2025-06-05",
@@ -1126,7 +1126,7 @@
       "return": -0.28,
       "bh_return": -2.02,
       "excess": 1.74,
-      "holding_days": 0
+      "holding_days": 14
     },
     {
       "entry_date": "2025-06-26",
@@ -1136,7 +1136,7 @@
       "return": 22.47,
       "bh_return": 27.91,
       "excess": -5.44,
-      "holding_days": 0
+      "holding_days": 71
     },
     {
       "entry_date": "2025-09-25",
@@ -1146,7 +1146,7 @@
       "return": -5.33,
       "bh_return": -1.52,
       "excess": -3.8,
-      "holding_days": 0
+      "holding_days": 18
     },
     {
       "entry_date": "2025-12-03",
@@ -1156,7 +1156,7 @@
       "return": 16.19,
       "bh_return": 18.04,
       "excess": -1.84,
-      "holding_days": 0
+      "holding_days": 58
     },
     {
       "entry_date": "2026-04-08",
@@ -1166,7 +1166,7 @@
       "return": 25.38,
       "bh_return": 25.08,
       "excess": 0.3,
-      "holding_days": 0
+      "holding_days": 50
     },
     {
       "entry_date": "2026-06-18",
@@ -1176,7 +1176,7 @@
       "return": 4.86,
       "bh_return": 0.33,
       "excess": 4.54,
-      "holding_days": 0
+      "holding_days": 20
     }
   ],
   "nav_monthly": [
@@ -1620,5 +1620,27 @@
       "excess": 26.9
     }
   ],
-  "update_time": "2026-07-17 09:26"
+  "update_time": "2026-07-20 10:15:36",
+  "intraday": {
+    "market_time": "2026-07-20 10:15:09",
+    "generated_time": "2026-07-20 10:15:36",
+    "price": 1934.9979,
+    "dif": -30.5004,
+    "dea": 10.3451,
+    "macd_bar": -81.6911,
+    "position": "cash",
+    "signal_type": "none",
+    "signal_label": "暂无预估穿越信号",
+    "is_estimated": true,
+    "strategy_nav": 4.5878,
+    "benchmark_nav": 1.8663
+  },
+  "signal_status": {
+    "phase": "intraday",
+    "is_estimated": true,
+    "label": "暂无预估穿越信号"
+  },
+  "data_source": "sina_realtime",
+  "market_time": "2026-07-20 10:15:09",
+  "generated_time": "2026-07-20 10:15:36"
 }

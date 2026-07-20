@@ -40,6 +40,8 @@ try_etf_15min.py
 
 # Test / debug
 test_*.py
+!tests/
+!tests/test_*.py
 explore_*.py
 extract_doc.py
 check_data.py
