@@ -1,24 +1,24 @@
 {
   "current": {
-    "date": "2026-07-29",
-    "close": 1861.24,
-    "dif": -53.1234,
-    "dea": -26.7599,
-    "macd_bar": -52.727,
+    "date": "2026-07-30",
+    "close": 1755.22,
+    "dif": -59.8874,
+    "dea": -31.4924,
+    "macd_bar": -56.79,
     "position": "cash",
     "position_cn": "空仓中"
   },
   "approaching": {
-    "distance": -26.36,
-    "distance_pct": 98.52,
+    "distance": -28.39,
+    "distance_pct": 90.16,
     "direction": "DIF在DEA下方",
     "approaching_dead": false,
     "approaching_gold": false,
-    "alert": "DIF 在 DEA 下方 98.5%，距离较远"
+    "alert": "DIF 在 DEA 下方 90.2%，距离较远"
   },
   "performance": {
     "total_return": 358.78,
-    "annual_return": 27.27,
+    "annual_return": 27.25,
     "max_drawdown": -26.56,
     "sharpe": 1.09,
     "calmar": 1.03,
@@ -27,8 +27,8 @@
     "profit_factor": 3.61
   },
   "benchmark": {
-    "total_return": 79.51,
-    "annual_return": 9.7,
+    "total_return": 69.29,
+    "annual_return": 8.68,
     "max_drawdown": -57.93
   },
   "all_signals": [
@@ -1571,9 +1571,9 @@
       "benchmark": 2.4308
     },
     {
-      "date": "2026-07-29",
+      "date": "2026-07-30",
       "strategy": 4.5878,
-      "benchmark": 1.7951
+      "benchmark": 1.6929
     }
   ],
   "yearly": [
@@ -1616,18 +1616,18 @@
     {
       "year": 2026,
       "strategy": 41.2,
-      "benchmark": 9.8,
-      "excess": 31.5
+      "benchmark": 3.5,
+      "excess": 37.7
     }
   ],
-  "update_time": "2026-07-30 17:29:38",
+  "update_time": "2026-07-30 17:58:02",
   "signal_status": {
-    "phase": "intraday",
-    "is_estimated": true,
-    "label": "盘中估算"
+    "phase": "close",
+    "is_estimated": false,
+    "label": "收盘确认"
   },
   "data_source": "sina_daily_cache",
-  "market_time": "2026-07-29 收盘",
-  "generated_time": "2026-07-30 17:29:38",
+  "market_time": "2026-07-30 收盘",
+  "generated_time": "2026-07-30 17:58:02",
   "data_warning": "实时行情不可用：HTTPSConnectionPool(host='hq.sinajs.cn', port=443): Max retries exceeded with url: /list=sh000680 (Caused by NewConnectionError(\"HTTPSConnection(host='hq.sinajs.cn', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable\"))"
 }
