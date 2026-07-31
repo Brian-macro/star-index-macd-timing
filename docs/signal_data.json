@@ -1620,14 +1620,27 @@
       "excess": 37.7
     }
   ],
-  "update_time": "2026-07-31 12:53:07",
+  "update_time": "2026-07-31 13:40:04",
+  "intraday": {
+    "market_time": "2026-07-31 13:39:56",
+    "generated_time": "2026-07-31 13:40:04",
+    "price": 1860.256,
+    "dif": -58.9355,
+    "dea": -35.4129,
+    "macd_bar": -47.0452,
+    "position": "cash",
+    "signal_type": "none",
+    "signal_label": "暂无预估穿越信号",
+    "is_estimated": true,
+    "strategy_nav": 4.5878,
+    "benchmark_nav": 1.7942
+  },
   "signal_status": {
     "phase": "intraday",
     "is_estimated": true,
-    "label": "盘中估算"
+    "label": "暂无预估穿越信号"
   },
-  "data_source": "sina_daily_cache",
-  "market_time": "2026-07-30 收盘",
-  "generated_time": "2026-07-31 12:53:07",
-  "data_warning": "实时行情不可用：HTTPSConnectionPool(host='hq.sinajs.cn', port=443): Max retries exceeded with url: /list=sh000680 (Caused by NewConnectionError(\"HTTPSConnection(host='hq.sinajs.cn', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable\"))"
+  "data_source": "sina_realtime",
+  "market_time": "2026-07-31 13:39:56",
+  "generated_time": "2026-07-31 13:40:04"
 }
