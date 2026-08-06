@@ -1625,10 +1625,10 @@
       "excess": 27.4
     }
   ],
-  "update_time": "2026-08-06 15:41:29",
+  "update_time": "2026-08-06 17:38:21",
   "intraday": {
-    "market_time": "2026-08-06 15:35:40",
-    "generated_time": "2026-08-06 15:41:29",
+    "market_time": "2026-08-06 16:19:40",
+    "generated_time": "2026-08-06 17:38:21",
     "price": 1954.046,
     "dif": -45.4102,
     "dea": -44.3559,
@@ -1646,6 +1646,6 @@
     "label": "暂无预估穿越信号"
   },
   "data_source": "sina_realtime",
-  "market_time": "2026-08-06 15:35:40",
-  "generated_time": "2026-08-06 15:41:29"
+  "market_time": "2026-08-06 16:19:40",
+  "generated_time": "2026-08-06 17:38:21"
 }
