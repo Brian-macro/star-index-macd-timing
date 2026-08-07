@@ -1625,20 +1625,20 @@
       "excess": 26.0
     }
   ],
-  "update_time": "2026-08-07 12:28:50",
+  "update_time": "2026-08-07 14:09:41",
   "intraday": {
-    "market_time": "2026-08-07 11:35:54",
-    "generated_time": "2026-08-07 12:28:50",
-    "price": 1988.8354,
-    "dif": -37.1325,
-    "dea": -43.324,
-    "macd_bar": 12.383,
+    "market_time": "2026-08-07 14:09:35",
+    "generated_time": "2026-08-07 14:09:41",
+    "price": 2012.7112,
+    "dif": -35.9725,
+    "dea": -43.1583,
+    "macd_bar": 14.3715,
     "position": "cash",
     "signal_type": "buy",
     "signal_label": "预估买入信号",
     "is_estimated": true,
     "strategy_nav": 4.5878,
-    "benchmark_nav": 1.9182
+    "benchmark_nav": 1.9412
   },
   "signal_status": {
     "phase": "intraday",
@@ -1646,6 +1646,6 @@
     "label": "预估买入信号"
   },
   "data_source": "sina_realtime",
-  "market_time": "2026-08-07 11:35:54",
-  "generated_time": "2026-08-07 12:28:50"
+  "market_time": "2026-08-07 14:09:35",
+  "generated_time": "2026-08-07 14:09:41"
 }
