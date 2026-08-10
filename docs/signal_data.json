@@ -1633,20 +1633,20 @@
       "excess": 22.2
     }
   ],
-  "update_time": "2026-08-10 12:00:41",
+  "update_time": "2026-08-10 13:02:19",
   "intraday": {
-    "market_time": "2026-08-10 11:35:54",
-    "generated_time": "2026-08-10 12:00:41",
-    "price": 1988.0387,
-    "dif": -29.2012,
-    "dea": -41.1244,
-    "macd_bar": 23.8464,
+    "market_time": "2026-08-10 13:02:14",
+    "generated_time": "2026-08-10 13:02:19",
+    "price": 1982.8505,
+    "dif": -29.4532,
+    "dea": -41.1604,
+    "macd_bar": 23.4143,
     "position": "cash",
     "signal_type": "none",
     "signal_label": "暂无预估穿越信号",
     "is_estimated": true,
     "strategy_nav": 4.5878,
-    "benchmark_nav": 1.9174
+    "benchmark_nav": 1.9124
   },
   "signal_status": {
     "phase": "intraday",
@@ -1654,6 +1654,6 @@
     "label": "暂无预估穿越信号"
   },
   "data_source": "sina_realtime",
-  "market_time": "2026-08-10 11:35:54",
-  "generated_time": "2026-08-10 12:00:41"
+  "market_time": "2026-08-10 13:02:14",
+  "generated_time": "2026-08-10 13:02:19"
 }
