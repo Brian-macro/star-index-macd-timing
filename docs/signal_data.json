@@ -1,24 +1,24 @@
 {
   "current": {
-    "date": "2026-08-07",
-    "close": 2019.44,
-    "dif": -35.6454,
-    "dea": -43.1116,
-    "macd_bar": 14.9323,
+    "date": "2026-08-10",
+    "close": 2012.3,
+    "dif": -28.0224,
+    "dea": -40.956,
+    "macd_bar": 25.8672,
     "position": "long",
     "position_cn": "持仓中"
   },
   "approaching": {
-    "distance": 7.47,
-    "distance_pct": 17.32,
+    "distance": 12.93,
+    "distance_pct": 31.58,
     "direction": "DIF在DEA上方",
     "approaching_dead": false,
     "approaching_gold": false,
-    "alert": "DIF 在 DEA 上方 17.3%，可关注"
+    "alert": "DIF 在 DEA 上方 31.6%，距离较远"
   },
   "performance": {
-    "total_return": 358.78,
-    "annual_return": 27.14,
+    "total_return": 356.77,
+    "annual_return": 27.03,
     "max_drawdown": -26.56,
     "sharpe": 1.09,
     "calmar": 1.02,
@@ -27,8 +27,8 @@
     "profit_factor": 3.61
   },
   "benchmark": {
-    "total_return": 94.77,
-    "annual_return": 11.08,
+    "total_return": 94.08,
+    "annual_return": 11.01,
     "max_drawdown": -57.93
   },
   "all_signals": [
@@ -1584,9 +1584,9 @@
       "benchmark": 1.7552
     },
     {
-      "date": "2026-08-07",
-      "strategy": 4.5878,
-      "benchmark": 1.9477
+      "date": "2026-08-10",
+      "strategy": 4.5677,
+      "benchmark": 1.9408
     }
   ],
   "yearly": [
@@ -1628,32 +1628,18 @@
     },
     {
       "year": 2026,
-      "strategy": 41.2,
-      "benchmark": 19.1,
-      "excess": 22.2
+      "strategy": 40.6,
+      "benchmark": 18.7,
+      "excess": 22.0
     }
   ],
-  "update_time": "2026-08-10 16:25:22",
-  "intraday": {
-    "market_time": "2026-08-10 15:35:41",
-    "generated_time": "2026-08-10 16:25:22",
-    "price": 2012.3022,
-    "dif": -28.0224,
-    "dea": -40.956,
-    "macd_bar": 25.8672,
-    "position": "cash",
-    "signal_type": "none",
-    "signal_label": "暂无预估穿越信号",
-    "is_estimated": true,
-    "strategy_nav": 4.5878,
-    "benchmark_nav": 1.9408
-  },
+  "update_time": "2026-08-10 16:56:08",
   "signal_status": {
-    "phase": "intraday",
-    "is_estimated": true,
-    "label": "暂无预估穿越信号"
+    "phase": "close",
+    "is_estimated": false,
+    "label": "收盘确认"
   },
   "data_source": "sina_realtime",
   "market_time": "2026-08-10 15:35:41",
-  "generated_time": "2026-08-10 16:25:22"
+  "generated_time": "2026-08-10 16:56:08"
 }
