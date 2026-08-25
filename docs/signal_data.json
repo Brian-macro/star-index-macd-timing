@@ -1,24 +1,24 @@
 {
   "current": {
-    "date": "2026-08-24",
-    "close": 1896.15,
-    "dif": -8.103,
-    "dea": -13.2857,
-    "macd_bar": 10.3655,
+    "date": "2026-08-25",
+    "close": 1896.08,
+    "dif": -11.1239,
+    "dea": -12.9769,
+    "macd_bar": 3.706,
     "position": "long",
     "position_cn": "持仓中"
   },
   "approaching": {
-    "distance": 5.18,
-    "distance_pct": 39.01,
+    "distance": 1.85,
+    "distance_pct": 14.28,
     "direction": "DIF在DEA上方",
     "approaching_dead": false,
     "approaching_gold": false,
-    "alert": "DIF 在 DEA 上方 39.0%，距离较远"
+    "alert": "DIF 在 DEA 上方 14.3%，可关注"
   },
   "performance": {
-    "total_return": 330.41,
-    "annual_return": 25.67,
+    "total_return": 330.39,
+    "annual_return": 25.65,
     "max_drawdown": -26.56,
     "sharpe": 1.04,
     "calmar": 0.97,
@@ -27,8 +27,8 @@
     "profit_factor": 3.61
   },
   "benchmark": {
-    "total_return": 82.88,
-    "annual_return": 9.91,
+    "total_return": 82.87,
+    "annual_return": 9.9,
     "max_drawdown": -57.93
   },
   "all_signals": [
@@ -1584,9 +1584,9 @@
       "benchmark": 1.7552
     },
     {
-      "date": "2026-08-24",
-      "strategy": 4.3041,
-      "benchmark": 1.8288
+      "date": "2026-08-25",
+      "strategy": 4.3039,
+      "benchmark": 1.8287
     }
   ],
   "yearly": [
@@ -1633,27 +1633,13 @@
       "excess": 20.7
     }
   ],
-  "update_time": "2026-08-25 15:41:49",
-  "intraday": {
-    "market_time": "2026-08-25 15:35:44",
-    "generated_time": "2026-08-25 15:41:49",
-    "price": 1896.0754,
-    "dif": -11.1239,
-    "dea": -12.9769,
-    "macd_bar": 3.706,
-    "position": "long",
-    "signal_type": "none",
-    "signal_label": "暂无预估穿越信号",
-    "is_estimated": true,
-    "strategy_nav": 4.3039,
-    "benchmark_nav": 1.8287
-  },
+  "update_time": "2026-08-25 16:06:05",
   "signal_status": {
-    "phase": "intraday",
-    "is_estimated": true,
-    "label": "暂无预估穿越信号"
+    "phase": "close",
+    "is_estimated": false,
+    "label": "收盘确认"
   },
   "data_source": "sina_realtime",
   "market_time": "2026-08-25 15:35:44",
-  "generated_time": "2026-08-25 15:41:49"
+  "generated_time": "2026-08-25 16:06:05"
 }
