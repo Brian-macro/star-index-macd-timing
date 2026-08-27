@@ -1,34 +1,34 @@
 {
   "current": {
-    "date": "2026-08-26",
-    "close": 1905.4,
-    "dif": -12.7779,
-    "dea": -12.9485,
-    "macd_bar": 0.3411,
+    "date": "2026-08-27",
+    "close": 1973.97,
+    "dif": -10.4915,
+    "dea": -12.5975,
+    "macd_bar": 4.2118,
     "position": "long",
     "position_cn": "持仓中"
   },
   "approaching": {
-    "distance": 0.17,
-    "distance_pct": 1.32,
+    "distance": 2.11,
+    "distance_pct": 16.72,
     "direction": "DIF在DEA上方",
-    "approaching_dead": true,
+    "approaching_dead": false,
     "approaching_gold": false,
-    "alert": "⚠️ DIF 逼近 DEA，仅差 1.3%，即将死叉！注意风险"
+    "alert": "DIF 在 DEA 上方 16.7%，可关注"
   },
   "performance": {
-    "total_return": 332.51,
-    "annual_return": 25.73,
+    "total_return": 348.07,
+    "annual_return": 26.4,
     "max_drawdown": -26.56,
-    "sharpe": 1.04,
-    "calmar": 0.97,
+    "sharpe": 1.06,
+    "calmar": 0.99,
     "total_trades": 44,
     "win_rate": 50.0,
     "profit_factor": 3.61
   },
   "benchmark": {
-    "total_return": 83.77,
-    "annual_return": 9.98,
+    "total_return": 90.39,
+    "annual_return": 10.58,
     "max_drawdown": -57.93
   },
   "all_signals": [
@@ -1584,9 +1584,9 @@
       "benchmark": 1.7552
     },
     {
-      "date": "2026-08-26",
-      "strategy": 4.3251,
-      "benchmark": 1.8377
+      "date": "2026-08-27",
+      "strategy": 4.4807,
+      "benchmark": 1.9039
     }
   ],
   "yearly": [
@@ -1628,19 +1628,19 @@
     },
     {
       "year": 2026,
-      "strategy": 33.2,
-      "benchmark": 12.4,
-      "excess": 20.8
+      "strategy": 37.9,
+      "benchmark": 16.4,
+      "excess": 21.5
     }
   ],
-  "update_time": "2026-08-27 20:38:00",
+  "update_time": "2026-08-28 00:11:07",
   "intraday": {
     "market_time": "2026-08-27 15:35:43",
-    "generated_time": "2026-08-27 20:38:00",
+    "generated_time": "2026-08-28 00:11:07",
     "price": 1973.9754,
     "dif": -10.4915,
     "dea": -12.5975,
-    "macd_bar": 4.2119,
+    "macd_bar": 4.2118,
     "position": "long",
     "signal_type": "none",
     "signal_label": "暂无预估穿越信号",
@@ -1655,5 +1655,5 @@
   },
   "data_source": "sina_realtime",
   "market_time": "2026-08-27 15:35:43",
-  "generated_time": "2026-08-27 20:38:00"
+  "generated_time": "2026-08-28 00:11:07"
 }
