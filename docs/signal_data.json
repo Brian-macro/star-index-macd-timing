@@ -1,34 +1,34 @@
 {
   "current": {
-    "date": "2026-09-03",
-    "close": 1906.51,
-    "dif": -10.7362,
-    "dea": -10.9126,
-    "macd_bar": 0.3528,
-    "position": "long",
-    "position_cn": "持仓中"
+    "date": "2026-09-04",
+    "close": 1865.37,
+    "dif": -13.2956,
+    "dea": -11.253,
+    "macd_bar": -4.0852,
+    "position": "cash",
+    "position_cn": "空仓中"
   },
   "approaching": {
-    "distance": 0.18,
-    "distance_pct": 1.62,
-    "direction": "DIF在DEA上方",
-    "approaching_dead": true,
+    "distance": -2.04,
+    "distance_pct": 18.15,
+    "direction": "DIF在DEA下方",
+    "approaching_dead": false,
     "approaching_gold": false,
-    "alert": "⚠️ DIF 逼近 DEA，仅差 1.6%，即将死叉！注意风险"
+    "alert": "DIF 在 DEA 下方 18.2%，可关注"
   },
   "performance": {
-    "total_return": 332.76,
-    "annual_return": 25.63,
+    "total_return": 323.43,
+    "annual_return": 25.19,
     "max_drawdown": -26.56,
-    "sharpe": 1.03,
-    "calmar": 0.97,
+    "sharpe": 1.02,
+    "calmar": 0.95,
     "total_trades": 44,
     "win_rate": 50.0,
     "profit_factor": 3.61
   },
   "benchmark": {
-    "total_return": 83.88,
-    "annual_return": 9.95,
+    "total_return": 79.91,
+    "annual_return": 9.57,
     "max_drawdown": -57.93
   },
   "all_signals": [
@@ -743,6 +743,14 @@
       "dif": -35.6454,
       "dea": -43.1116,
       "macd_bar": 14.9323
+    },
+    {
+      "date": "2026-09-04",
+      "type": "sell",
+      "close": 1865.37,
+      "dif": -13.2956,
+      "dea": -11.253,
+      "macd_bar": -4.0852
     }
   ],
   "all_trades": [
@@ -1589,9 +1597,9 @@
       "benchmark": 1.9094
     },
     {
-      "date": "2026-09-03",
-      "strategy": 4.3276,
-      "benchmark": 1.8388
+      "date": "2026-09-04",
+      "strategy": 4.2343,
+      "benchmark": 1.7991
     }
   ],
   "yearly": [
@@ -1633,32 +1641,18 @@
     },
     {
       "year": 2026,
-      "strategy": 33.2,
-      "benchmark": 12.4,
-      "excess": 20.8
+      "strategy": 30.4,
+      "benchmark": 10.0,
+      "excess": 20.4
     }
   ],
-  "update_time": "2026-09-04 19:58:09",
-  "intraday": {
-    "market_time": "2026-09-04 15:35:43",
-    "generated_time": "2026-09-04 19:58:09",
-    "price": 1865.3655,
-    "dif": -13.2956,
-    "dea": -11.253,
-    "macd_bar": -4.0852,
-    "position": "long",
-    "signal_type": "sell",
-    "signal_label": "预估卖出信号",
-    "is_estimated": true,
-    "strategy_nav": 4.2343,
-    "benchmark_nav": 1.7991
-  },
+  "update_time": "2026-09-04 20:12:12",
   "signal_status": {
-    "phase": "intraday",
-    "is_estimated": true,
-    "label": "预估卖出信号"
+    "phase": "close",
+    "is_estimated": false,
+    "label": "收盘确认"
   },
   "data_source": "sina_realtime",
   "market_time": "2026-09-04 15:35:43",
-  "generated_time": "2026-09-04 19:58:09"
+  "generated_time": "2026-09-04 20:12:12"
 }
