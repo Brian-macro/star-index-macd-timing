@@ -1646,10 +1646,10 @@
       "excess": 20.4
     }
   ],
-  "update_time": "2026-09-07 17:59:22",
+  "update_time": "2026-09-07 21:16:41",
   "intraday": {
     "market_time": "2026-09-07 15:35:43",
-    "generated_time": "2026-09-07 17:59:22",
+    "generated_time": "2026-09-07 21:16:41",
     "price": 1900.8873,
     "dif": -13.2922,
     "dea": -11.5443,
@@ -1668,5 +1668,5 @@
   },
   "data_source": "sina_realtime",
   "market_time": "2026-09-07 15:35:43",
-  "generated_time": "2026-09-07 17:59:22"
+  "generated_time": "2026-09-07 21:16:41"
 }
