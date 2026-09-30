@@ -1664,14 +1664,14 @@
       "excess": 17.7
     }
   ],
-  "update_time": "2026-09-30 14:56:27",
+  "update_time": "2026-09-30 16:13:15",
   "intraday": {
-    "market_time": "2026-09-30 14:56:23",
-    "generated_time": "2026-09-30 14:56:27",
-    "price": 1815.1969,
-    "dif": -8.282,
-    "dea": -7.2723,
-    "macd_bar": -2.0194,
+    "market_time": "2026-09-30 15:35:40",
+    "generated_time": "2026-09-30 16:13:15",
+    "price": 1815.2159,
+    "dif": -8.281,
+    "dea": -7.2721,
+    "macd_bar": -2.0178,
     "position": "long",
     "signal_type": "sell",
     "signal_label": "预估卖出信号",
@@ -1685,6 +1685,6 @@
     "label": "预估卖出信号"
   },
   "data_source": "sina_realtime",
-  "market_time": "2026-09-30 14:56:23",
-  "generated_time": "2026-09-30 14:56:27"
+  "market_time": "2026-09-30 15:35:40",
+  "generated_time": "2026-09-30 16:13:15"
 }
