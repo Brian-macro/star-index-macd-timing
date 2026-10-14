@@ -9,7 +9,7 @@
     "position_cn": "空仓中"
   },
   "approaching": {
-    "distance": -14.47,
+    "distance": -14.48,
     "distance_pct": 99.55,
     "direction": "DIF在DEA下方",
     "approaching_dead": false,
@@ -1687,13 +1687,27 @@
       "excess": 24.6
     }
   ],
-  "update_time": "2026-10-13 23:11:30",
+  "update_time": "2026-10-14 14:20:23",
+  "intraday": {
+    "market_time": "2026-10-14 14:20:16",
+    "generated_time": "2026-10-14 14:20:23",
+    "price": 1639.7609,
+    "dif": -33.5004,
+    "dea": -17.2494,
+    "macd_bar": -32.502,
+    "position": "cash",
+    "signal_type": "none",
+    "signal_label": "暂无预估穿越信号",
+    "is_estimated": true,
+    "strategy_nav": 4.0192,
+    "benchmark_nav": 1.5815
+  },
   "signal_status": {
-    "phase": "close",
-    "is_estimated": false,
-    "label": "收盘确认"
+    "phase": "intraday",
+    "is_estimated": true,
+    "label": "暂无预估穿越信号"
   },
   "data_source": "sina_realtime",
-  "market_time": "2026-10-13 15:35:38",
-  "generated_time": "2026-10-13 23:11:30"
+  "market_time": "2026-10-14 14:20:16",
+  "generated_time": "2026-10-14 14:20:23"
 }
