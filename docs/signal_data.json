@@ -1,24 +1,24 @@
 {
   "current": {
-    "date": "2026-10-15",
-    "close": 1586.88,
-    "dif": -39.204,
-    "dea": -20.4323,
-    "macd_bar": -37.5433,
+    "date": "2026-10-16",
+    "close": 1584.04,
+    "dif": -42.7372,
+    "dea": -23.6187,
+    "macd_bar": -38.2369,
     "position": "cash",
     "position_cn": "空仓中"
   },
   "approaching": {
-    "distance": -18.77,
-    "distance_pct": 91.87,
+    "distance": -19.12,
+    "distance_pct": 80.95,
     "direction": "DIF在DEA下方",
     "approaching_dead": false,
     "approaching_gold": false,
-    "alert": "DIF 在 DEA 下方 91.9%，距离较远"
+    "alert": "DIF 在 DEA 下方 80.9%，距离较远"
   },
   "performance": {
     "total_return": 301.92,
-    "annual_return": 23.8,
+    "annual_return": 23.78,
     "max_drawdown": -26.56,
     "sharpe": 0.98,
     "calmar": 0.9,
@@ -27,8 +27,8 @@
     "profit_factor": 3.31
   },
   "benchmark": {
-    "total_return": 53.05,
-    "annual_return": 6.75,
+    "total_return": 52.78,
+    "annual_return": 6.72,
     "max_drawdown": -57.93
   },
   "all_signals": [
@@ -1638,9 +1638,9 @@
       "benchmark": 1.7507
     },
     {
-      "date": "2026-10-15",
+      "date": "2026-10-16",
       "strategy": 4.0192,
-      "benchmark": 1.5305
+      "benchmark": 1.5278
     }
   ],
   "yearly": [
@@ -1683,31 +1683,17 @@
     {
       "year": 2026,
       "strategy": 23.7,
-      "benchmark": -6.4,
-      "excess": 30.2
+      "benchmark": -6.6,
+      "excess": 30.3
     }
   ],
-  "update_time": "2026-10-16 20:05:36",
-  "intraday": {
-    "market_time": "2026-10-16 15:35:39",
-    "generated_time": "2026-10-16 20:05:36",
-    "price": 1584.0401,
-    "dif": -42.7372,
-    "dea": -23.6187,
-    "macd_bar": -38.2369,
-    "position": "cash",
-    "signal_type": "none",
-    "signal_label": "暂无预估穿越信号",
-    "is_estimated": true,
-    "strategy_nav": 4.0192,
-    "benchmark_nav": 1.5278
-  },
+  "update_time": "2026-10-16 20:36:49",
   "signal_status": {
-    "phase": "intraday",
-    "is_estimated": true,
-    "label": "暂无预估穿越信号"
+    "phase": "close",
+    "is_estimated": false,
+    "label": "收盘确认"
   },
   "data_source": "sina_realtime",
   "market_time": "2026-10-16 15:35:39",
-  "generated_time": "2026-10-16 20:05:36"
+  "generated_time": "2026-10-16 20:36:49"
 }
