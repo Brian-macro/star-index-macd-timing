@@ -1,24 +1,24 @@
 {
   "current": {
-    "date": "2026-11-04",
-    "close": 1525.31,
-    "dif": -43.772,
-    "dea": -41.821,
-    "macd_bar": -3.9021,
-    "position": "cash",
-    "position_cn": "空仓中"
+    "date": "2026-11-05",
+    "close": 1546.42,
+    "dif": -38.0104,
+    "dea": -41.2766,
+    "macd_bar": 6.5323,
+    "position": "long",
+    "position_cn": "持仓中"
   },
   "approaching": {
-    "distance": -1.95,
-    "distance_pct": 4.67,
-    "direction": "DIF在DEA下方",
-    "approaching_dead": false,
-    "approaching_gold": true,
-    "alert": "🔔 DIF 逼近 DEA，仅差 4.7%，即将金叉！准备买入"
+    "distance": 3.27,
+    "distance_pct": 7.91,
+    "direction": "DIF在DEA上方",
+    "approaching_dead": true,
+    "approaching_gold": false,
+    "alert": "⚠️ DIF 逼近 DEA，仅差 7.9%，即将死叉！注意风险"
   },
   "performance": {
     "total_return": 301.92,
-    "annual_return": 23.58,
+    "annual_return": 23.56,
     "max_drawdown": -26.56,
     "sharpe": 0.97,
     "calmar": 0.89,
@@ -27,8 +27,8 @@
     "profit_factor": 3.31
   },
   "benchmark": {
-    "total_return": 47.11,
-    "annual_return": 6.05,
+    "total_return": 49.15,
+    "annual_return": 6.27,
     "max_drawdown": -57.93
   },
   "all_signals": [
@@ -767,6 +767,14 @@
       "dif": -8.281,
       "dea": -7.2721,
       "macd_bar": -2.0178
+    },
+    {
+      "date": "2026-11-05",
+      "type": "buy",
+      "close": 1546.42,
+      "dif": -38.0104,
+      "dea": -41.2766,
+      "macd_bar": 6.5323
     }
   ],
   "all_trades": [
@@ -1643,9 +1651,9 @@
       "benchmark": 1.3708
     },
     {
-      "date": "2026-11-04",
+      "date": "2026-11-05",
       "strategy": 4.0192,
-      "benchmark": 1.4711
+      "benchmark": 1.4915
     }
   ],
   "yearly": [
@@ -1688,31 +1696,17 @@
     {
       "year": 2026,
       "strategy": 23.7,
-      "benchmark": -10.1,
-      "excess": 33.8
+      "benchmark": -8.8,
+      "excess": 32.6
     }
   ],
-  "update_time": "2026-11-05 23:10:24",
-  "intraday": {
-    "market_time": "2026-11-05 15:35:42",
-    "generated_time": "2026-11-05 23:10:24",
-    "price": 1546.4156,
-    "dif": -38.0104,
-    "dea": -41.2766,
-    "macd_bar": 6.5323,
-    "position": "cash",
-    "signal_type": "buy",
-    "signal_label": "预估买入信号",
-    "is_estimated": true,
-    "strategy_nav": 4.0192,
-    "benchmark_nav": 1.4915
-  },
+  "update_time": "2026-11-05 23:40:54",
   "signal_status": {
-    "phase": "intraday",
-    "is_estimated": true,
-    "label": "预估买入信号"
+    "phase": "close",
+    "is_estimated": false,
+    "label": "收盘确认"
   },
   "data_source": "sina_realtime",
   "market_time": "2026-11-05 15:35:42",
-  "generated_time": "2026-11-05 23:10:24"
+  "generated_time": "2026-11-05 23:40:54"
 }
