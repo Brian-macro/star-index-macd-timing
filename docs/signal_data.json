@@ -1,24 +1,24 @@
 {
   "current": {
-    "date": "2026-11-06",
-    "close": 1496.36,
-    "dif": -35.4648,
-    "dea": -40.4463,
-    "macd_bar": 9.9631,
+    "date": "2026-11-09",
+    "close": 1502.98,
+    "dif": -32.6415,
+    "dea": -39.3314,
+    "macd_bar": 13.3797,
     "position": "long",
     "position_cn": "持仓中"
   },
   "approaching": {
-    "distance": 4.98,
-    "distance_pct": 12.32,
+    "distance": 6.69,
+    "distance_pct": 17.01,
     "direction": "DIF在DEA上方",
     "approaching_dead": false,
     "approaching_gold": false,
-    "alert": "DIF 在 DEA 上方 12.3%，可关注"
+    "alert": "DIF 在 DEA 上方 17.0%，可关注"
   },
   "performance": {
-    "total_return": 310.4,
-    "annual_return": 23.94,
+    "total_return": 312.22,
+    "annual_return": 24.0,
     "max_drawdown": -26.56,
     "sharpe": 0.98,
     "calmar": 0.9,
@@ -27,8 +27,8 @@
     "profit_factor": 3.31
   },
   "benchmark": {
-    "total_return": 44.32,
-    "annual_return": 5.73,
+    "total_return": 44.96,
+    "annual_return": 5.8,
     "max_drawdown": -57.93
   },
   "all_signals": [
@@ -1651,9 +1651,9 @@
       "benchmark": 1.3708
     },
     {
-      "date": "2026-11-06",
-      "strategy": 4.104,
-      "benchmark": 1.4432
+      "date": "2026-11-09",
+      "strategy": 4.1222,
+      "benchmark": 1.4496
     }
   ],
   "yearly": [
@@ -1695,19 +1695,19 @@
     },
     {
       "year": 2026,
-      "strategy": 26.4,
-      "benchmark": -11.8,
-      "excess": 38.1
+      "strategy": 26.9,
+      "benchmark": -11.4,
+      "excess": 38.3
     }
   ],
-  "update_time": "2026-11-09 21:40:01",
+  "update_time": "2026-11-10 01:09:11",
   "intraday": {
     "market_time": "2026-11-09 15:43:39",
-    "generated_time": "2026-11-09 21:40:01",
+    "generated_time": "2026-11-10 01:09:11",
     "price": 1502.9795,
     "dif": -32.6415,
     "dea": -39.3314,
-    "macd_bar": 13.3796,
+    "macd_bar": 13.3797,
     "position": "long",
     "signal_type": "none",
     "signal_label": "暂无预估穿越信号",
@@ -1722,5 +1722,5 @@
   },
   "data_source": "sina_realtime",
   "market_time": "2026-11-09 15:43:39",
-  "generated_time": "2026-11-09 21:40:01"
+  "generated_time": "2026-11-10 01:09:11"
 }
