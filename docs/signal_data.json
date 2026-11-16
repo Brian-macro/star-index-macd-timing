@@ -1,34 +1,34 @@
 {
   "current": {
-    "date": "2026-11-13",
-    "close": 1516.41,
-    "dif": -18.3395,
-    "dea": -31.3693,
-    "macd_bar": 26.0597,
+    "date": "2026-11-16",
+    "close": 1434.39,
+    "dif": -21.0084,
+    "dea": -29.8892,
+    "macd_bar": 17.7616,
     "position": "long",
     "position_cn": "持仓中"
   },
   "approaching": {
-    "distance": 13.03,
-    "distance_pct": 41.54,
+    "distance": 8.88,
+    "distance_pct": 29.71,
     "direction": "DIF在DEA上方",
     "approaching_dead": false,
     "approaching_gold": false,
-    "alert": "DIF 在 DEA 上方 41.5%，距离较远"
+    "alert": "DIF 在 DEA 上方 29.7%，距离较远"
   },
   "performance": {
-    "total_return": 315.9,
-    "annual_return": 24.11,
+    "total_return": 293.41,
+    "annual_return": 23.05,
     "max_drawdown": -26.56,
-    "sharpe": 0.99,
-    "calmar": 0.91,
+    "sharpe": 0.95,
+    "calmar": 0.87,
     "total_trades": 46,
     "win_rate": 47.8,
     "profit_factor": 3.31
   },
   "benchmark": {
-    "total_return": 46.25,
-    "annual_return": 5.93,
+    "total_return": 38.34,
+    "annual_return": 5.04,
     "max_drawdown": -57.93
   },
   "all_signals": [
@@ -1651,9 +1651,9 @@
       "benchmark": 1.3708
     },
     {
-      "date": "2026-11-13",
-      "strategy": 4.159,
-      "benchmark": 1.4625
+      "date": "2026-11-16",
+      "strategy": 3.9341,
+      "benchmark": 1.3834
     }
   ],
   "yearly": [
@@ -1695,15 +1695,15 @@
     },
     {
       "year": 2026,
-      "strategy": 28.0,
-      "benchmark": -10.6,
-      "excess": 38.6
+      "strategy": 21.1,
+      "benchmark": -15.4,
+      "excess": 36.5
     }
   ],
-  "update_time": "2026-11-16 21:24:25",
+  "update_time": "2026-11-17 00:44:48",
   "intraday": {
     "market_time": "2026-11-16 15:35:39",
-    "generated_time": "2026-11-16 21:24:25",
+    "generated_time": "2026-11-17 00:44:48",
     "price": 1434.3953,
     "dif": -21.0084,
     "dea": -29.8892,
@@ -1722,5 +1722,5 @@
   },
   "data_source": "sina_realtime",
   "market_time": "2026-11-16 15:35:39",
-  "generated_time": "2026-11-16 21:24:25"
+  "generated_time": "2026-11-17 00:44:48"
 }
