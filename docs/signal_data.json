@@ -1,24 +1,24 @@
 {
   "current": {
-    "date": "2026-11-24",
-    "close": 1400.63,
-    "dif": -28.5043,
-    "dea": -28.2633,
-    "macd_bar": -0.4819,
+    "date": "2026-11-25",
+    "close": 1317.53,
+    "dif": -31.4495,
+    "dea": -28.7185,
+    "macd_bar": -5.462,
     "position": "cash",
     "position_cn": "空仓中"
   },
   "approaching": {
-    "distance": -0.24,
-    "distance_pct": 0.85,
+    "distance": -2.73,
+    "distance_pct": 9.51,
     "direction": "DIF在DEA下方",
     "approaching_dead": false,
-    "approaching_gold": true,
-    "alert": "🔔 DIF 逼近 DEA，仅差 0.9%，即将金叉！准备买入"
+    "approaching_gold": false,
+    "alert": "DIF 在 DEA 下方 9.5%，可关注"
   },
   "performance": {
     "total_return": 263.11,
-    "annual_return": 21.48,
+    "annual_return": 21.47,
     "max_drawdown": -26.82,
     "sharpe": 0.9,
     "calmar": 0.8,
@@ -27,8 +27,8 @@
     "profit_factor": 3.07
   },
   "benchmark": {
-    "total_return": 35.09,
-    "annual_return": 4.64,
+    "total_return": 27.07,
+    "annual_return": 3.68,
     "max_drawdown": -57.93
   },
   "all_signals": [
@@ -1669,9 +1669,9 @@
       "benchmark": 1.3708
     },
     {
-      "date": "2026-11-24",
+      "date": "2026-11-25",
       "strategy": 3.6311,
-      "benchmark": 1.3509
+      "benchmark": 1.2707
     }
   ],
   "yearly": [
@@ -1714,14 +1714,14 @@
     {
       "year": 2026,
       "strategy": 11.8,
-      "benchmark": -17.4,
-      "excess": 29.2
+      "benchmark": -22.3,
+      "excess": 34.1
     }
   ],
-  "update_time": "2026-11-25 23:20:29",
+  "update_time": "2026-11-26 01:47:46",
   "intraday": {
     "market_time": "2026-11-25 15:35:39",
-    "generated_time": "2026-11-25 23:20:29",
+    "generated_time": "2026-11-26 01:47:46",
     "price": 1317.5286,
     "dif": -31.4495,
     "dea": -28.7185,
@@ -1740,5 +1740,5 @@
   },
   "data_source": "sina_realtime",
   "market_time": "2026-11-25 15:35:39",
-  "generated_time": "2026-11-25 23:20:29"
+  "generated_time": "2026-11-26 01:47:46"
 }
